@@ -1,8 +1,8 @@
 <div align='center'>
 
-# Practica 0
+# Practica 0 Introducción a Python
 
-<img src='https://media.giphy.com/media/26mcXiGHOkDBrFqWVD/giphy.gif'></div>
+<img src='https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExdWwxNmxvcmZiNjFyNjF0NWwwN2ZkaGsxeGh1eTk0bHl6MG05N3ZobCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/cbpsz18jDBrQdEhPKR/giphy.gif'></div>
 
 # Jupyter Notebooks y Google Colab
 ### Ejercicio 1
