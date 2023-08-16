@@ -253,4 +253,38 @@ distancia_calculada
 ### Ejercicio 5
 Investigue y escriba código que demuestre el funcionamiento de los “slices” en listas
 
+Los "slices" en Python son una herramienta que permite extraer subconjuntos de listas (y otros tipos de secuencias, como strings y tuplas). Los slices se definen con la notación `lista[inicio:final:pasos]`.
+
+Aquí hay una explicación básica de cómo funcionan los slices:
+
+1. **Inicio**: Es el índice desde donde comienza el slice. Si se omite, se asume que es el inicio de la lista.
+2. **Final**: Es el índice donde termina el slice (sin incluirlo). Si se omite, se asume que es el final de la lista.
+3. **Pasos**: Es la cantidad de índices que se saltará al tomar elementos. Si se omite, se asume que es 1.
+
+Vamos a demostrar el funcionamiento de los slices con ejemplos:
+
+```python
+# Definimos una lista de muestra
+lista = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+
+# Ejemplos de slices
+
+# Tomar todos los elementos desde el índice 2 hasta el índice 5 (sin incluir el 5)
+ejemplo1 = lista[2:5]
+
+# Tomar todos los elementos desde el inicio hasta el índice 4 (sin incluir el 4)
+ejemplo2 = lista[:4]
+
+# Tomar todos los elementos desde el índice 3 hasta el final
+ejemplo3 = lista[3:]
+
+# Tomar todos los elementos desde el índice 1 hasta el índice 8, pero saltando de 2 en 2
+ejemplo4 = lista[1:8:2]
+
+# Invertir la lista usando slices
+ejemplo5 = lista[::-1]
+
+ejemplo1, ejemplo2, ejemplo3, ejemplo4, ejemplo5
+```
+
 <img src= 'https://i.gifer.com/origin/8c/8cd3f1898255c045143e1da97fbabf10_w200.gif' height="20" width="100%">
