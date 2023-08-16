@@ -18,6 +18,7 @@
 
 <p><img width="350" align='right' src="https://media.giphy.com/media/vznn44o07gQXnW0RvN/giphy.gif"></p>
 
+- [Cheat Sheet](https://ipgp.github.io/scientific_python_cheat_sheet/)
 - [Practica 0 Introducción a Python](/Documentos/Practica0.md)
 
 
