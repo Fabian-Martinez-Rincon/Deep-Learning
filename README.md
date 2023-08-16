@@ -1,1 +1,1 @@
-# Deep-Learning
+[![Typing SVG](https://readme-typing-svg.demolab.com?font=Fira+Code&weight=600&size=30&duration=2000&pause=1000&width=435&lines=%F0%9F%A4%96+Deep-Learning)](https://git.io/typing-svg)
