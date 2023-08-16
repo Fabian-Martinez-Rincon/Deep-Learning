@@ -111,6 +111,54 @@ Conecte su cuenta de Google Drive con Google Colab:
 ### Ejercicio 1
 Investigue/repase que son las listas, tuplas, conjuntos y diccionarios nativos de Python (puede consultar https://www.youtube.com/watch?v=CCUNuqqn7PQ) . Utilizando los constructores para cada tipo de dato genere códigos de ejemplo y recórralos imprimiendo sus valores.
 
+1. **Listas**:
+   - Son colecciones ordenadas y mutables.
+   - Pueden contener cualquier tipo de dato: números, cadenas, otras listas, etc.
+   - Se definen usando corchetes `[]`.
+
+   Ejemplo:
+   ```python
+   lista = [1, 2, 3, 4, 5]
+   for elemento in lista:
+       print(elemento)
+   ```
+
+2. **Tuplas**:
+   - Son colecciones ordenadas e inmutables.
+   - Se definen usando paréntesis `()`.
+
+   Ejemplo:
+   ```python
+   tupla = (1, 2, 3, 4, 5)
+   for elemento in tupla:
+       print(elemento)
+   ```
+
+3. **Conjuntos (sets)**:
+   - Son colecciones no ordenadas y no tienen elementos duplicados.
+   - Se definen usando llaves `{}` o con el constructor `set()`.
+
+   Ejemplo:
+   ```python
+   conjunto = {1, 2, 3, 4, 5}
+   for elemento in conjunto:
+       print(elemento)
+   ```
+
+4. **Diccionarios**:
+   - Son colecciones no ordenadas de pares clave-valor.
+   - Las claves son únicas y pueden ser de cualquier tipo inmutable.
+   - Se definen usando llaves `{}` con pares clave-valor separados por `:`.
+
+   Ejemplo:
+   ```python
+   diccionario = {"a": 1, "b": 2, "c": 3}
+   for clave, valor in diccionario.items():
+       print(f"Clave: {clave}, Valor: {valor}")
+   ```
+
+Puedes ejecutar estos ejemplos en tu entorno Python para ver cómo funcionan. ¡Espero que esto te ayude a comprender mejor estos tipos de datos en Python!
+
 <img src= 'https://i.gifer.com/origin/8c/8cd3f1898255c045143e1da97fbabf10_w200.gif' height="20" width="100%">
 
 ### Ejercicio 2
