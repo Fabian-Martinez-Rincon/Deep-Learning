@@ -1,8 +1,6 @@
-<div align='center'>
-
 # Practica 0 Introducción a Python
 
-<img src='https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExdWwxNmxvcmZiNjFyNjF0NWwwN2ZkaGsxeGh1eTk0bHl6MG05N3ZobCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/cbpsz18jDBrQdEhPKR/giphy.gif'></div>
+
 
 # Jupyter Notebooks y Google Colab
 ### Ejercicio 1
@@ -291,11 +289,14 @@ ejemplo1, ejemplo2, ejemplo3, ejemplo4, ejemplo5
 
 # Biblioteca Numpy
 
-### Ejercicio 1
+## Ejercicio 1
 Practique la creación de vectores, matrices y tensores y responda:
-- ¿Qué diferencias hay entre los constructores, array, empty, full, zeros, ones, identity?
-- ¿Qué tipos de datos pueden utilizarse? ¿En qué se diferencian? ¿Cuál es el tipo que se toma por defecto?¿Es siempre el mismo?
-- ¿Qué funciones se pueden utilizar para generar arreglos con números aleatorios?
+
+### ¿Qué diferencias hay entre los constructores, array, empty, full, zeros, ones, identity?
+
+### ¿Qué tipos de datos pueden utilizarse? ¿En qué se diferencian? ¿Cuál es el tipo que se toma por defecto?¿Es siempre el mismo?
+
+### ¿Qué funciones se pueden utilizar para generar arreglos con números aleatorios?
 
 <img src= 'https://i.gifer.com/origin/8c/8cd3f1898255c045143e1da97fbabf10_w200.gif' height="20" width="100%">
 

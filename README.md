@@ -25,3 +25,15 @@
 
 <img src= 'https://i.gifer.com/origin/8c/8cd3f1898255c045143e1da97fbabf10_w200.gif' height="20" width="100%">
 
+Medidas de tendencia central
+- **Media**
+- **Mediana**
+- **Moda**
+- **Rango medio**
+
+Medidas de dispersión
+- **Varianza**
+- **Desviación estándar**
+- **Rango**
+- **Cuartiles**
+- **Rango intercuartil**
