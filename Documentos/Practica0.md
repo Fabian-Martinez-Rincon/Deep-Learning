@@ -164,7 +164,7 @@ Puedes ejecutar estos ejemplos en tu entorno Python para ver cómo funcionan. ¡
 ### Ejercicio 2
 Genere el código necesario para recorrer simultáneamente 2 listas con la misma cantidad de elementos e imprima los mismos utilizando un único for (tip: función zip).
 
-<table border="1">
+<table >
     <thead>
         <tr>
             <th>Código</th>
