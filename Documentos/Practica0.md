@@ -174,7 +174,7 @@ Genere el código necesario para recorrer simultáneamente 2 listas con la misma
     <tbody>
         <tr>
             <td>
-            
+
 ```python
 lista1 = [1, 2, 3, 4, 5]
 lista2 = ['a', 'b', 'c', 'd', 'e']
@@ -201,10 +201,60 @@ for elemento1, elemento2 in zip(lista1, lista2):
 ### Ejercicio 3
 Implemente una función que a partir de la lista que recibe cómo parámetro, retorne una nueva lista sin elementos repetidos. Compruebe su correcto funcionamiento.
 
+```python
+def sin_repetidos(lista):
+    """
+    Esta función recibe una lista y retorna una nueva lista
+     sin elementos repetidos.
+    """
+    return list(dict.fromkeys(lista))
+
+# Prueba
+lista_original = [1, 2, 2, 3, 4, 4, 4, 5, 6, 6, 7]
+lista_sin_repetidos = sin_repetidos(lista_original)
+
+lista_sin_repetidos
+```
+
+> [1, 2, 3, 4, 5, 6, 7]
+
+
+La función `sin_repetidos` ha sido implementada correctamente. Al proporcionarle la lista \([1, 2, 2, 3, 4, 4, 4, 5, 6, 6, 7]\), ha retornado una nueva lista sin elementos repetidos: \([1, 2, 3, 4, 5, 6, 7]\).
+
+El método utilizado convierte la lista en un diccionario para eliminar duplicados (ya que las claves de un diccionario no pueden repetirse) y luego convierte el diccionario de nuevo en una lista. Es un enfoque eficiente para lograr el objetivo.
+
 <img src= 'https://i.gifer.com/origin/8c/8cd3f1898255c045143e1da97fbabf10_w200.gif' height="20" width="100%">
 
 ### Ejercicio 4
 Implemente una función que calcule la distancia entre 2 puntos (2D). Utilice la función sqrt del paquete math para implementarla y compruebe el correcto funcionamiento de la misma.
+
+```python
+import math
+
+def distancia(punto1, punto2):
+    """
+    Esta función calcula la distancia entre dos puntos en un plano 2D.
+    """
+    dx = punto2[0] - punto1[0]
+    dy = punto2[1] - punto1[1]
+    return math.sqrt(dx**2 + dy**2)
+
+# Prueba
+punto_a = (1, 2)
+punto_b = (4, 6)
+distancia_calculada = distancia(punto_a, punto_b)
+
+distancia_calculada
+```
+>5.0
+
+La función `distancia` ha sido implementada correctamente. Al proporcionarle los puntos \( (1, 2) \) y \( (4, 6) \), ha calculado una distancia de 5.0 unidades entre ellos, lo que es consistente con la fórmula de distancia en un plano 2D. 
+
+La fórmula para calcular la distancia entre dos puntos \( (x_1, y_1) \) y \( (x_2, y_2) \) en un plano 2D es:
+
+\[
+\text{distancia} = \sqrt{(x_2 - x_1)^2 + (y_2 - y_1)^2}
+\]
 
 <img src= 'https://i.gifer.com/origin/8c/8cd3f1898255c045143e1da97fbabf10_w200.gif' height="20" width="100%">
 
