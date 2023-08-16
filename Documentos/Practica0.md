@@ -293,38 +293,32 @@ ejemplo1, ejemplo2, ejemplo3, ejemplo4, ejemplo5
 
 ### Ejercicio 1
 Practique la creación de vectores, matrices y tensores y responda:
-● ¿Qué diferencias hay entre los constructores, array, empty, full, zeros, ones, identity?
-● ¿Qué tipos de datos pueden utilizarse? ¿En qué se diferencian? ¿Cuál es el tipo que se toma por
-defecto?¿Es siempre el mismo?
-● ¿Qué funciones se pueden utilizar para generar arreglos con números aleatorios?
+- ¿Qué diferencias hay entre los constructores, array, empty, full, zeros, ones, identity?
+- ¿Qué tipos de datos pueden utilizarse? ¿En qué se diferencian? ¿Cuál es el tipo que se toma por defecto?¿Es siempre el mismo?
+- ¿Qué funciones se pueden utilizar para generar arreglos con números aleatorios?
 
 <img src= 'https://i.gifer.com/origin/8c/8cd3f1898255c045143e1da97fbabf10_w200.gif' height="20" width="100%">
 
 ### Ejercicio 2
 Investigue y ejemplifique las funciones relacionadas al tamaño de los arrays de Numpy:
-● ¿Para qué sirven las funciones shape, len, ndim, size?
-● ¿Qué tipos de datos pueden utilizarse? ¿En qué se diferencian? ¿Cuál es el tipo que se toma por
-defecto?¿Es siempre el mismo?
-● ¿Qué funciones se pueden utilizar para generar arreglos con números aleatorios?
+- ¿Para qué sirven las funciones shape, len, ndim, size?
+- ¿Qué tipos de datos pueden utilizarse? ¿En qué se diferencian? ¿Cuál es el tipo que se toma por defecto?¿Es siempre el mismo?
+- ¿Qué funciones se pueden utilizar para generar arreglos con números aleatorios?
 
 <img src= 'https://i.gifer.com/origin/8c/8cd3f1898255c045143e1da97fbabf10_w200.gif' height="20" width="100%">
 
 ### Ejercicio 3
-Practique funciones de agregación (sum, min, max, etc.) sobre vectores, matrices y tensores. Enumere y pruebe
-todas las funciones que encuentre y responda:
-● ¿Estas funciones se aplican a todos los datos del array o pueden realizarse sobre dimensiones
-particulares? Ejemplifique.
+Practique funciones de agregación (sum, min, max, etc.) sobre vectores, matrices y tensores. Enumere y pruebe todas las funciones que encuentre y responda:
+- ¿Estas funciones se aplican a todos los datos del array o pueden realizarse sobre dimensiones particulares? Ejemplifique.
 
 <img src= 'https://i.gifer.com/origin/8c/8cd3f1898255c045143e1da97fbabf10_w200.gif' height="20" width="100%">
 
 ### Ejercicio 4
-Investigue y realice ejemplos que utilicen funciones para manipular elementos de arreglos (append, insert, delete,
-etc.) y arreglos entre sí (vstack, hstack, contacenate, etc.)
+Investigue y realice ejemplos que utilicen funciones para manipular elementos de arreglos (append, insert, delete, etc.) y arreglos entre sí (vstack, hstack, contacenate, etc.)
 
 <img src= 'https://i.gifer.com/origin/8c/8cd3f1898255c045143e1da97fbabf10_w200.gif' height="20" width="100%">
 
 ### Ejercicio 5
-Los arrays de numpy (así como las listas) proveen de un mecanismo versátil para hacer o referenciar una sección
-de los mismos. Practique este mecanismo de acceso con vectores, matrices y tensores imprimiendo y modificando distintas regiones de los mismos
+Los arrays de numpy (así como las listas) proveen de un mecanismo versátil para hacer o referenciar una sección de los mismos. Practique este mecanismo de acceso con vectores, matrices y tensores imprimiendo y modificando distintas regiones de los mismos
 
 <img src= 'https://i.gifer.com/origin/8c/8cd3f1898255c045143e1da97fbabf10_w200.gif' height="20" width="100%">
