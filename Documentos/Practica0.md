@@ -18,6 +18,15 @@
 
 ## Ejercicio 2
 
+Las celdas de código de un cuaderno no solo permiten ejecutar instrucciones de Python. Utilizando el símbolo ! (signo de admiración) es posible ejecutar los comandos disponibles desde la línea de comandos de su sistema operativo. De esta manera `!ls` o `!dir` (dependiendo el sistema operativo) listan los archivos de la carpeta actual y `!pip` o `!conda` permiten administrar los paquetes python.
+
+Experimente la ejecución de varios comandos del sistema operativo a través de celdas de código. Entre las
+pruebas incluya la invocación de:
+- python para determinar la versión instalada.
+- pip show nombre (pandas, numpy, tensorflow, etc.) de paquete para saber la versión instalada.
+- comandos que permitan crear y eliminar carpetas.
+
+
 El ejercicio que has mencionado se refiere a la ejecución de comandos del sistema operativo directamente desde un cuaderno Jupyter (o IPython). A continuación, te mostraré cómo hacerlo:
 
 1. **Ejecutar comandos del sistema operativo**: 
