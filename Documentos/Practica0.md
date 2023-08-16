@@ -164,6 +164,38 @@ Puedes ejecutar estos ejemplos en tu entorno Python para ver cómo funcionan. ¡
 ### Ejercicio 2
 Genere el código necesario para recorrer simultáneamente 2 listas con la misma cantidad de elementos e imprima los mismos utilizando un único for (tip: función zip).
 
+<table border="1">
+    <thead>
+        <tr>
+            <th>Código</th>
+            <th>Salida</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>
+            
+```python
+lista1 = [1, 2, 3, 4, 5]
+lista2 = ['a', 'b', 'c', 'd', 'e']
+
+for elemento1, elemento2 in zip(lista1, lista2):
+    print(elemento1, elemento2)
+```
+
+</td>
+<td>
+  1 a<br>
+  2 b<br>
+  3 c<br>
+  4 d<br>
+  5 e
+</td>
+</tr>
+</tbody>
+</table>
+
+
 <img src= 'https://i.gifer.com/origin/8c/8cd3f1898255c045143e1da97fbabf10_w200.gif' height="20" width="100%">
 
 ### Ejercicio 3
