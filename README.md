@@ -14,10 +14,11 @@
 
 <img src= 'https://i.gifer.com/origin/8c/8cd3f1898255c045143e1da97fbabf10_w200.gif' height="20" width="100%">
 
+<p><img width="350" align='right' src="https://media.giphy.com/media/vznn44o07gQXnW0RvN/giphy.gif"></p>
 
 - [Practica 0 Introducción a Python](/Documentos/Practica0.md)
 
 
 
+<img src= 'https://i.gifer.com/origin/8c/8cd3f1898255c045143e1da97fbabf10_w200.gif' height="20" width="100%">
 
-<p><img width="350" align='right' src="https://media.giphy.com/media/vznn44o07gQXnW0RvN/giphy.gif"></p>
