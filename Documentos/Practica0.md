@@ -218,10 +218,8 @@ lista_sin_repetidos
 
 > [1, 2, 3, 4, 5, 6, 7]
 
+![](2023-08-16-00-25-18.png)
 
-La función `sin_repetidos` ha sido implementada correctamente. Al proporcionarle la lista \([1, 2, 2, 3, 4, 4, 4, 5, 6, 6, 7]\), ha retornado una nueva lista sin elementos repetidos: \([1, 2, 3, 4, 5, 6, 7]\).
-
-El método utilizado convierte la lista en un diccionario para eliminar duplicados (ya que las claves de un diccionario no pueden repetirse) y luego convierte el diccionario de nuevo en una lista. Es un enfoque eficiente para lograr el objetivo.
 
 <img src= 'https://i.gifer.com/origin/8c/8cd3f1898255c045143e1da97fbabf10_w200.gif' height="20" width="100%">
 
@@ -248,13 +246,7 @@ distancia_calculada
 ```
 >5.0
 
-La función `distancia` ha sido implementada correctamente. Al proporcionarle los puntos \( (1, 2) \) y \( (4, 6) \), ha calculado una distancia de 5.0 unidades entre ellos, lo que es consistente con la fórmula de distancia en un plano 2D. 
-
-La fórmula para calcular la distancia entre dos puntos \( (x_1, y_1) \) y \( (x_2, y_2) \) en un plano 2D es:
-
-\[
-\text{distancia} = \sqrt{(x_2 - x_1)^2 + (y_2 - y_1)^2}
-\]
+![](2023-08-16-00-26-05.png)
 
 <img src= 'https://i.gifer.com/origin/8c/8cd3f1898255c045143e1da97fbabf10_w200.gif' height="20" width="100%">
 
