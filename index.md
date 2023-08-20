@@ -71,6 +71,7 @@
 
 
 - Parcial 06/11/2023
+- [Parte Teoricoa](/README.html)
 - [Practica 0 Introducción a Python](#practica-0-introducción-a-python)
 - [Practica 1 Análisis de datos y preprocesamientoCarpeta]()
 
