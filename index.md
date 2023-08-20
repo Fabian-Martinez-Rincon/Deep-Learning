@@ -189,16 +189,13 @@ Investigue/repase que son las listas, tuplas, conjuntos y diccionarios nativos d
 
 ```python
 lista = [1, 2, 3, 4, 5]
-print(lista)
-# [1, 2, 3, 4, 5]
+print(lista) # [1, 2, 3, 4, 5]
 
 tupla = (1, 2, 3, 4, 5)
-print(tupla)
-# (1, 2, 3, 4, 5)
+print(tupla) # (1, 2, 3, 4, 5)
 
 conjunto = {1, 2, 3, 4, 5}
-print(conjunto)
-# {1, 2, 3, 4, 5}
+print(conjunto) # {1, 2, 3, 4, 5}
 
 diccionario = {"a": 1, "b": 2, "c": 3}
 for clave, valor in diccionario.items():
@@ -208,8 +205,7 @@ for clave, valor in diccionario.items():
 # Clave: b, Valor: 2
 # Clave: c, Valor: 3
 
-print(diccionario["a"])
-# 1
+print(diccionario["a"]) # 1
 ```
 
 <img src= 'https://github.com/Fabian-Martinez-Rincon/Fabian-Martinez-Rincon/assets/55964635/7eebf649-e558-43e2-ad5f-9977dc5ff3e5
@@ -279,7 +275,7 @@ print(resultado1, resultado2, resultado3)
 <img src= 'https://github.com/Fabian-Martinez-Rincon/Fabian-Martinez-Rincon/assets/55964635/7eebf649-e558-43e2-ad5f-9977dc5ff3e5
 ' height="10" width="100%">
 
-## Ejercicio 4
+### Ejercicio 4
 Implemente una función que calcule la distancia entre 2 puntos (2D). Utilice la función sqrt del paquete math para implementarla y compruebe el correcto funcionamiento de la misma.
 
 La distancia entre dos puntos en un plano 2D se calcula mediante la fórmula de la distancia euclidiana:
@@ -291,6 +287,9 @@ La distancia entre dos puntos en un plano 2D se calcula mediante la fórmula de 
 Donde \( (x_1, y_1) \) son las coordenadas del primer punto y \( (x_2, y_2) \) son las coordenadas del segundo punto.
 
 Vamos a implementar la función y luego la probaremos con algunos ejemplos:
+
+<table><td>
+
 
 ```python
 import math
@@ -310,16 +309,176 @@ print(resultado_AB)
 # 5.0
 ```
 
+</td><td> <img src='https://github.com/Fabian-Martinez-Rincon/Fabian-Martinez-Rincon/assets/55964635/4aa4ccb4-2f8d-424d-9018-7d9340c05b86'></td>
+
+
+</table>
+
+
+
 **Como puedes observar**
 
 La distancia entre los puntos \( (0, 0) \) y \( (3, 4) \) es 5.0. Esto es porque forma un triángulo rectángulo con catetos de longitud 3 y 4, y la hipotenusa (que es la distancia entre los dos puntos) tiene longitud 5 (por el teorema de Pitágoras).
 
 Por lo tanto, la función calcula correctamente la distancia entre dos puntos en un plano 2D.
 
-Ejemplo del grafico
+<img src= 'https://github.com/Fabian-Martinez-Rincon/Fabian-Martinez-Rincon/assets/55964635/7eebf649-e558-43e2-ad5f-9977dc5ff3e5
+' height="10" width="100%">
 
-<img src='https://github.com/Fabian-Martinez-Rincon/Fabian-Martinez-Rincon/assets/55964635/4aa4ccb4-2f8d-424d-9018-7d9340c05b86' width='70%'>
+### Ejercicio 5
+Los arrays de numpy (así como las listas) proveen de un mecanismo versátil para hacer o referenciar una sección de los mismos. Practique este mecanismo de acceso con vectores, matrices y tensores imprimiendo y modificando distintas regiones de los mismos
 
+
+
+<table><tr><td>Vectores Uni</td><td>Matrices Bi</td><td>Tensores Tri</td></tr>
+
+<tr><td>
+
+- Acceso a elementos individuales
+- Acceso a segmentos (slices)
+- Modificación de segmentos
+
+</td><td>
+
+- Acceso a elementos individuales
+- Acceso a filas/columnas
+- Acceso a submatrices
+- Modificación de submatrices
+
+</td><td>
+
+- Acceso a elementos individuales
+- Acceso a matrices 2D individuales
+- Acceso a subtensores
+- Modificación de subtensores
+</td></tr>
+</table>
+
+**Vectores (Arrays Unidimensionales)**
+
+```python
+import numpy as np
+
+vector = np.array([0, 1, 2, 3, 4, 5, 6, 7, 8, 9])
+print(vector[2]) # 2
+print(vector[2:7]) # [2 3 4 5 6]
+
+vector[5:8] = -1
+print(vector) # [ 0  1  2  3  4 -1 -1 -1  8  9]
+```
+
+**Matrices (Arrays Bidimensionales)**:
+- El elemento en la segunda fila y tercera columna (índices 1 y 2) es `6`.
+- La segunda fila completa es `[4, 5, 6]`.
+- La tercera columna completa es `[3, 6, 9, 12]`.
+- La submatriz que va desde la segunda fila hasta la tercera fila (exclusiva) y de la segunda columna a la tercera columna (exclusiva) es:
+
+    \[
+    \begin{pmatrix}
+    5 & 6 \\
+    8 & 9 \\
+    \end{pmatrix}
+    \]
+    
+- Después de modificar la matriz, cambiando los valores de las filas 3 y 4 y las columnas 2 y 3 a `0`, la matriz se convierte en:
+
+    \[
+    \begin{pmatrix}
+    1 & 2 & 3 \\
+    4 & 5 & 6 \\
+    7 & 0 & 0 \\
+    10 & 0 & 0 \\
+    \end{pmatrix}
+    \]
+
+```python
+# Matrices (Arrays Bidimensionales)
+matriz = np.array([[1, 2, 3], [4, 5, 6], [7, 8, 9], [10, 11, 12]])
+
+print(matriz[1, 2]) # 6
+print(matriz[1, :]) # [4 5 6]
+print(matriz[:, 2]) # [ 3  6  9 12]
+
+print(matriz[1:3, 1:3]) # Acceso a submatrices
+
+matriz[2:4, 1:3] = 0 # Modificación de submatrices 
+```
+
+**Tensores (Arrays Tridimensionales)**
+
+```python
+# Creación de un tensor
+tensor = np.array([
+    [[1, 2], [3, 4], [5, 6]],
+    [[7, 8], [9, 10], [11, 12]],
+    [[13, 14], [15, 16], [17, 18]]
+])
+```
+
+**Acceder a elementos individuales**
+Vamos a acceder al elemento en la segunda matriz, segunda fila y primera columna (índices 1, 1 y 0).
+
+```python
+elemento_2_2_1 = tensor[1, 1, 0]
+```
+
+El elemento en la segunda matriz, segunda fila y primera columna (índices 1, 1 y 0) es \(9\).
+
+**Acceder a matrices 2D individuales dentro del tensor**
+Vamos a acceder a la segunda matriz 2D del tensor (índice 1).
+
+```python
+matriz_2 = tensor[1, :, :]
+```
+
+La segunda matriz 2D del tensor es:
+
+\[
+\begin{bmatrix}
+7 & 8 \\
+9 & 10 \\
+11 & 12 \\
+\end{bmatrix}
+\]
+
+
+**Acceder a subtensores**:
+
+Vamos a acceder a un subtensor que incluye la primera y segunda matrices, las primeras dos filas de cada matriz y todas las columnas.
+
+```python
+subtensor = tensor[0:2, 0:2, :]
+```
+
+El subtensor seleccionado es:
+
+\[
+\begin{bmatrix}
+[1, 2] & [3, 4] \\
+[7, 8] & [9, 10] \\
+\end{bmatrix}
+\]
+
+**Modificar subtensores**:
+
+Vamos a modificar el tensor, cambiando los valores de las primeras dos matrices, las primeras dos filas de cada matriz y la primera columna a `-1`.
+
+```python
+tensor[0:2, 0:2, 0] = -1
+```
+
+Después de la modificación, el tensor se convierte en:
+
+\[
+\begin{bmatrix}
+[-1, 2] & [-1, 4] & [5, 6] \\
+[-1, 8] & [-1, 10] & [11, 12] \\
+[13, 14] & [15, 16] & [17, 18] \\
+\end{bmatrix}
+\]
 
 <img src= 'https://github.com/Fabian-Martinez-Rincon/Fabian-Martinez-Rincon/assets/55964635/7eebf649-e558-43e2-ad5f-9977dc5ff3e5
 ' height="10" width="100%">
+
+
+## Biblioteca Pandas

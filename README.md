@@ -1,34 +1,5 @@
 ![image](https://github.com/Fabian-Martinez-Rincon/Deep-Learning/assets/55964635/4f685244-bcdb-4bb9-b436-4d5f31b96e64)
 
-
-<img src= 'https://i.gifer.com/origin/8c/8cd3f1898255c045143e1da97fbabf10_w200.gif' height="20" width="100%">
-
-
-### Ejercicio 4
-Implemente una función que calcule la distancia entre 2 puntos (2D). Utilice la función sqrt del paquete math para implementarla y compruebe el correcto funcionamiento de la misma.
-
-```python
-import math
-
-def distancia(punto1, punto2):
-    """
-    Esta función calcula la distancia entre dos puntos en un plano 2D.
-    """
-    dx = punto2[0] - punto1[0]
-    dy = punto2[1] - punto1[1]
-    return math.sqrt(dx**2 + dy**2)
-
-# Prueba
-punto_a = (1, 2)
-punto_b = (4, 6)
-distancia_calculada = distancia(punto_a, punto_b)
-
-distancia_calculada
-```
->5.0
-
-![](2023-08-16-00-26-05.png)
-
 <img src= 'https://i.gifer.com/origin/8c/8cd3f1898255c045143e1da97fbabf10_w200.gif' height="20" width="100%">
 
 ### Ejercicio 5
