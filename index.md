@@ -153,3 +153,55 @@ Conecte su cuenta de Google Drive con Google Colab:
 
 <img src= 'https://github.com/Fabian-Martinez-Rincon/Fabian-Martinez-Rincon/assets/55964635/7eebf649-e558-43e2-ad5f-9977dc5ff3e5
 ' height="10" width="100%">
+
+# Repaso de Python
+
+### Ejercicio 1
+Investigue/repase que son las listas, tuplas, conjuntos y diccionarios nativos de Python (puede consultar https://www.youtube.com/watch?v=CCUNuqqn7PQ) . Utilizando los constructores para cada tipo de dato genere códigos de ejemplo y recórralos imprimiendo sus valores.
+
+**Listas**:
+- Son colecciones ordenadas y mutables.
+- Pueden contener cualquier tipo de dato: números, cadenas, otras listas, etc.
+- Se definen usando corchetes `[]`.
+
+**Tuplas**:
+- Son colecciones ordenadas e inmutables.
+- Se definen usando paréntesis `()`.
+
+**Conjuntos (sets)**:
+- Son colecciones no ordenadas y no tienen elementos duplicados.
+- Se definen usando llaves `{}` o con el constructor `set()`.
+
+
+**Diccionarios**:
+- Son colecciones no ordenadas de pares clave-valor.
+- Las claves son únicas y pueden ser de cualquier tipo inmutable.
+- Se definen usando llaves `{}` con pares clave-valor separados por `:`.
+
+```python
+lista = [1, 2, 3, 4, 5]
+print(lista)
+# [1, 2, 3, 4, 5]
+
+tupla = (1, 2, 3, 4, 5)
+print(tupla)
+# (1, 2, 3, 4, 5)
+
+conjunto = {1, 2, 3, 4, 5}
+print(conjunto)
+# {1, 2, 3, 4, 5}
+
+diccionario = {"a": 1, "b": 2, "c": 3}
+for clave, valor in diccionario.items():
+    print(f"Clave: {clave}, Valor: {valor}")
+
+# Clave: a, Valor: 1
+# Clave: b, Valor: 2
+# Clave: c, Valor: 3
+
+print(diccionario["a"])
+# 1
+```
+
+<img src= 'https://github.com/Fabian-Martinez-Rincon/Fabian-Martinez-Rincon/assets/55964635/7eebf649-e558-43e2-ad5f-9977dc5ff3e5
+' height="10" width="100%">
