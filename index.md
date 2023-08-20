@@ -59,6 +59,7 @@
 </div>
 
 > pip install pandas
+> Extensión para ver todo clean [Dark Reader](https://darkreader.org/)
 
 <div align='center'>
 <button onclick="toggleDarkMode()">Oscuro</button>
@@ -154,7 +155,7 @@ Conecte su cuenta de Google Drive con Google Colab:
 <img src= 'https://github.com/Fabian-Martinez-Rincon/Fabian-Martinez-Rincon/assets/55964635/7eebf649-e558-43e2-ad5f-9977dc5ff3e5
 ' height="10" width="100%">
 
-# Repaso de Python
+## Repaso de Python
 
 ### Ejercicio 1
 Investigue/repase que son las listas, tuplas, conjuntos y diccionarios nativos de Python (puede consultar https://www.youtube.com/watch?v=CCUNuqqn7PQ) . Utilizando los constructores para cada tipo de dato genere códigos de ejemplo y recórralos imprimiendo sus valores.
@@ -274,6 +275,12 @@ resultado3 = eliminar_duplicados(ejemplo3)
 print(resultado1, resultado2, resultado3)
 # [1, 2, 3, 4, 5] ['a', 'b', 'c', 'd'] [True, False]
 ```
+
+<img src= 'https://github.com/Fabian-Martinez-Rincon/Fabian-Martinez-Rincon/assets/55964635/7eebf649-e558-43e2-ad5f-9977dc5ff3e5
+' height="10" width="100%">
+
+## Ejercicio 4
+Implemente una función que calcule la distancia entre 2 puntos (2D). Utilice la función sqrt del paquete math para implementarla y compruebe el correcto funcionamiento de la misma.
 
 <img src= 'https://github.com/Fabian-Martinez-Rincon/Fabian-Martinez-Rincon/assets/55964635/7eebf649-e558-43e2-ad5f-9977dc5ff3e5
 ' height="10" width="100%">
