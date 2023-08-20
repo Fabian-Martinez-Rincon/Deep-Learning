@@ -282,5 +282,43 @@ print(resultado1, resultado2, resultado3)
 ## Ejercicio 4
 Implemente una función que calcule la distancia entre 2 puntos (2D). Utilice la función sqrt del paquete math para implementarla y compruebe el correcto funcionamiento de la misma.
 
+La distancia entre dos puntos en un plano 2D se calcula mediante la fórmula de la distancia euclidiana:
+
+\[
+\text{distancia} = \sqrt{(x_2 - x_1)^2 + (y_2 - y_1)^2}
+\]
+
+Donde \( (x_1, y_1) \) son las coordenadas del primer punto y \( (x_2, y_2) \) son las coordenadas del segundo punto.
+
+Vamos a implementar la función y luego la probaremos con algunos ejemplos:
+
+```python
+import math
+
+def distancia(punto1, punto2):
+    x1, y1 = punto1
+    x2, y2 = punto2
+    return math.sqrt((x2 - x1)**2 + (y2 - y1)**2)
+
+# Ejemplos para probar la función
+puntoA = (0, 0)
+puntoB = (3, 4)
+
+resultado_AB = distancia(puntoA, puntoB)
+
+print(resultado_AB)
+# 5.0
+```
+
+**Como puedes observar**
+
+La distancia entre los puntos \( (0, 0) \) y \( (3, 4) \) es 5.0. Esto es porque forma un triángulo rectángulo con catetos de longitud 3 y 4, y la hipotenusa (que es la distancia entre los dos puntos) tiene longitud 5 (por el teorema de Pitágoras).
+
+Por lo tanto, la función calcula correctamente la distancia entre dos puntos en un plano 2D.
+
+Ejemplo del grafico
+
+![image](https://github.com/Fabian-Martinez-Rincon/Fabian-Martinez-Rincon/assets/55964635/4aa4ccb4-2f8d-424d-9018-7d9340c05b86)
+
 <img src= 'https://github.com/Fabian-Martinez-Rincon/Fabian-Martinez-Rincon/assets/55964635/7eebf649-e558-43e2-ad5f-9977dc5ff3e5
 ' height="10" width="100%">
