@@ -70,8 +70,8 @@
 
 
 - Parcial 06/11/2023
-- [Practica 0 Introducción a Python]()
-- [Practica 1 Análisis de datos y preprocesamientoCarpeta](#práctica-2-mt)
+- [Practica 0 Introducción a Python](#practica-0-introducción-a-python)
+- [Practica 1 Análisis de datos y preprocesamientoCarpeta]()
 
 
 <img src= 'https://github.com/Fabian-Martinez-Rincon/Fabian-Martinez-Rincon/assets/55964635/7eebf649-e558-43e2-ad5f-9977dc5ff3e5
@@ -159,24 +159,30 @@ Conecte su cuenta de Google Drive con Google Colab:
 ### Ejercicio 1
 Investigue/repase que son las listas, tuplas, conjuntos y diccionarios nativos de Python (puede consultar https://www.youtube.com/watch?v=CCUNuqqn7PQ) . Utilizando los constructores para cada tipo de dato genere códigos de ejemplo y recórralos imprimiendo sus valores.
 
-**Listas**:
+<table>
+<tr><td>Listas</td><td>Tuplas</td></tr>
+<tr><td>
+
 - Son colecciones ordenadas y mutables.
 - Pueden contener cualquier tipo de dato: números, cadenas, otras listas, etc.
 - Se definen usando corchetes `[]`.
+</td><td>
 
-**Tuplas**:
 - Son colecciones ordenadas e inmutables.
 - Se definen usando paréntesis `()`.
+</td></tr>
+<tr><td>Conjuntos (sets)</td><td>Diccionarios</td></tr>
+<tr><td>
 
-**Conjuntos (sets)**:
 - Son colecciones no ordenadas y no tienen elementos duplicados.
 - Se definen usando llaves `{}` o con el constructor `set()`.
 
+</td><td>
 
-**Diccionarios**:
 - Son colecciones no ordenadas de pares clave-valor.
 - Las claves son únicas y pueden ser de cualquier tipo inmutable.
 - Se definen usando llaves `{}` con pares clave-valor separados por `:`.
+</td></tr></table>
 
 ```python
 lista = [1, 2, 3, 4, 5]
