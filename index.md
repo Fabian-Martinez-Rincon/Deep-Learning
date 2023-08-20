@@ -123,47 +123,7 @@ pruebas incluya la invocación de:
 
 El ejercicio que has mencionado se refiere a la ejecución de comandos del sistema operativo directamente desde un cuaderno Jupyter (o IPython). A continuación, te mostraré cómo hacerlo:
 
-**Ejecutar comandos del sistema operativo**: 
-
-En un cuaderno Jupyter, puedes ejecutar comandos del sistema operativo precediendo el comando con un signo de exclamación `!`.
-
-Ejemplo: Para listar los archivos en la carpeta actual (en sistemas Unix-like):
-  ```python
-  !ls
-  ```
-Para sistemas Windows:
-```python
-!dir
-```
-
-**Determinar la versión de Python**:
-```python
-!python --version
-```
-
-**Ver la versión de un paquete específico con pip**:
-
-Para `pandas`:
-```python
-!pip show pandas
-```
-Para `numpy`:
-```python
-!pip show numpy
-```
-Y así sucesivamente para otros paquetes.
-
-4. **Crear y eliminar carpetas**:
-   - Crear una carpeta llamada "test_folder":
-     ```python
-     !mkdir test_folder
-     ```
-   - Eliminar la carpeta "test_folder":
-     ```python
-     !rmdir test_folder
-     ```
-
-Estos comandos se pueden ejecutar directamente en las celdas de un cuaderno Jupyter. Sin embargo, ten en cuenta que la capacidad de ejecutar comandos del sistema operativo desde un cuaderno puede variar según la configuración de seguridad y el entorno en el que se esté ejecutando el cuaderno.
+- [Resolución en el jupyter Notebook](/Practica/Practica0/ejercicio2.ipynb)
 
 <img src= 'https://github.com/Fabian-Martinez-Rincon/Fabian-Martinez-Rincon/assets/55964635/7eebf649-e558-43e2-ad5f-9977dc5ff3e5
 ' height="10" width="100%">
