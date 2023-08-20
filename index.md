@@ -62,15 +62,14 @@
 
 <div align='center'>
 <button onclick="toggleDarkMode()">Oscuro</button>
-<a href='https://github.com/Fabian-Martinez-Rincon/CyC/tree/main'><button style='background: #ecec00'> ⭐ </button></a>
+<a href='https://github.com/Fabian-Martinez-Rincon/Deep-Learning/tree/main'><button style='background: #ecec00'> ⭐ </button></a>
 <a href='https://github.com/Fabian-Martinez-Rincon'><button style='background: #000000'>Github</button></a>
 
 <img src= 'https://github.com/Fabian-Martinez-Rincon/Fabian-Martinez-Rincon/assets/55964635/7eebf649-e558-43e2-ad5f-9977dc5ff3e5
 ' height="10" width="100%"></div>
 
 
-- Parcial 22/11/2023
-- [Drive 2023](https://drive.google.com/drive/folders/1mNm_nba9il7KAgwj2YnQAqEJ9tF0PlKl)
+- Parcial 06/11/2023
 - [Practica 0 Introducción a Python]()
 - [Practica 1 Análisis de datos y preprocesamientoCarpeta](#práctica-2-mt)
 
@@ -87,6 +86,7 @@
 ### Ejercicio 1
 
 **¿Qué es un cuaderno (notebook) Jupyter?**
+
 Un cuaderno Jupyter es una herramienta de código abierto que permite crear y compartir documentos interactivos que contienen código, ecuaciones, visualizaciones y texto narrativo. Los cuadernos Jupyter son ideales para crear un ambiente donde se pueden combinar la ejecución de código y la documentación en un solo lugar.
 
 **¿Qué es una celda?**
@@ -123,7 +123,7 @@ pruebas incluya la invocación de:
 
 El ejercicio que has mencionado se refiere a la ejecución de comandos del sistema operativo directamente desde un cuaderno Jupyter (o IPython). A continuación, te mostraré cómo hacerlo:
 
-- [Resolución en el jupyter Notebook](/Practica/Practica0/ejercicio2.ipynb)
+[Resolución en el jupyter Notebook](https://github.com/Fabian-Martinez-Rincon/Deep-Learning/blob/main/Practica/Practica0/ejercicio2.ipynb)
 
 <img src= 'https://github.com/Fabian-Martinez-Rincon/Fabian-Martinez-Rincon/assets/55964635/7eebf649-e558-43e2-ad5f-9977dc5ff3e5
 ' height="10" width="100%">
