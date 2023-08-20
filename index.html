@@ -1,0 +1,408 @@
+<!DOCTYPE html><html><head>
+      <title>index</title>
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      
+      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.4/dist/katex.min.css">
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      <style>
+      /**
+ * prism.js Github theme based on GitHub's theme.
+ * @author Sam Clarke
+ */
+code[class*="language-"],
+pre[class*="language-"] {
+  color: #333;
+  background: none;
+  font-family: Consolas, "Liberation Mono", Menlo, Courier, monospace;
+  text-align: left;
+  white-space: pre;
+  word-spacing: normal;
+  word-break: normal;
+  word-wrap: normal;
+  line-height: 1.4;
+
+  -moz-tab-size: 8;
+  -o-tab-size: 8;
+  tab-size: 8;
+
+  -webkit-hyphens: none;
+  -moz-hyphens: none;
+  -ms-hyphens: none;
+  hyphens: none;
+}
+
+/* Code blocks */
+pre[class*="language-"] {
+  padding: .8em;
+  overflow: auto;
+  /* border: 1px solid #ddd; */
+  border-radius: 3px;
+  /* background: #fff; */
+  background: #f5f5f5;
+}
+
+/* Inline code */
+:not(pre) > code[class*="language-"] {
+  padding: .1em;
+  border-radius: .3em;
+  white-space: normal;
+  background: #f5f5f5;
+}
+
+.token.comment,
+.token.blockquote {
+  color: #969896;
+}
+
+.token.cdata {
+  color: #183691;
+}
+
+.token.doctype,
+.token.punctuation,
+.token.variable,
+.token.macro.property {
+  color: #333;
+}
+
+.token.operator,
+.token.important,
+.token.keyword,
+.token.rule,
+.token.builtin {
+  color: #a71d5d;
+}
+
+.token.string,
+.token.url,
+.token.regex,
+.token.attr-value {
+  color: #183691;
+}
+
+.token.property,
+.token.number,
+.token.boolean,
+.token.entity,
+.token.atrule,
+.token.constant,
+.token.symbol,
+.token.command,
+.token.code {
+  color: #0086b3;
+}
+
+.token.tag,
+.token.selector,
+.token.prolog {
+  color: #63a35c;
+}
+
+.token.function,
+.token.namespace,
+.token.pseudo-element,
+.token.class,
+.token.class-name,
+.token.pseudo-class,
+.token.id,
+.token.url-reference .token.variable,
+.token.attr-name {
+  color: #795da3;
+}
+
+.token.entity {
+  cursor: help;
+}
+
+.token.title,
+.token.title .token.punctuation {
+  font-weight: bold;
+  color: #1d3e81;
+}
+
+.token.list {
+  color: #ed6a43;
+}
+
+.token.inserted {
+  background-color: #eaffea;
+  color: #55a532;
+}
+
+.token.deleted {
+  background-color: #ffecec;
+  color: #bd2c00;
+}
+
+.token.bold {
+  font-weight: bold;
+}
+
+.token.italic {
+  font-style: italic;
+}
+
+
+/* JSON */
+.language-json .token.property {
+  color: #183691;
+}
+
+.language-markup .token.tag .token.punctuation {
+  color: #333;
+}
+
+/* CSS */
+code.language-css,
+.language-css .token.function {
+  color: #0086b3;
+}
+
+/* YAML */
+.language-yaml .token.atrule {
+  color: #63a35c;
+}
+
+code.language-yaml {
+  color: #183691;
+}
+
+/* Ruby */
+.language-ruby .token.function {
+  color: #333;
+}
+
+/* Markdown */
+.language-markdown .token.url {
+  color: #795da3;
+}
+
+/* Makefile */
+.language-makefile .token.symbol {
+  color: #795da3;
+}
+
+.language-makefile .token.variable {
+  color: #183691;
+}
+
+.language-makefile .token.builtin {
+  color: #0086b3;
+}
+
+/* Bash */
+.language-bash .token.keyword {
+  color: #0086b3;
+}
+
+/* highlight */
+pre[data-line] {
+  position: relative;
+  padding: 1em 0 1em 3em;
+}
+pre[data-line] .line-highlight-wrapper {
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: transparent;
+  display: block;
+  width: 100%;
+}
+
+pre[data-line] .line-highlight {
+  position: absolute;
+  left: 0;
+  right: 0;
+  padding: inherit 0;
+  margin-top: 1em;
+  background: hsla(24, 20%, 50%,.08);
+  background: linear-gradient(to right, hsla(24, 20%, 50%,.1) 70%, hsla(24, 20%, 50%,0));
+  pointer-events: none;
+  line-height: inherit;
+  white-space: pre;
+}
+
+pre[data-line] .line-highlight:before, 
+pre[data-line] .line-highlight[data-end]:after {
+  content: attr(data-start);
+  position: absolute;
+  top: .4em;
+  left: .6em;
+  min-width: 1em;
+  padding: 0 .5em;
+  background-color: hsla(24, 20%, 50%,.4);
+  color: hsl(24, 20%, 95%);
+  font: bold 65%/1.5 sans-serif;
+  text-align: center;
+  vertical-align: .3em;
+  border-radius: 999px;
+  text-shadow: none;
+  box-shadow: 0 1px white;
+}
+
+pre[data-line] .line-highlight[data-end]:after {
+  content: attr(data-end);
+  top: auto;
+  bottom: .4em;
+}html body{font-family:"Helvetica Neue",Helvetica,"Segoe UI",Arial,freesans,sans-serif;font-size:16px;line-height:1.6;color:#333;background-color:#fff;overflow:initial;box-sizing:border-box;word-wrap:break-word}html body>:first-child{margin-top:0}html body h1,html body h2,html body h3,html body h4,html body h5,html body h6{line-height:1.2;margin-top:1em;margin-bottom:16px;color:#000}html body h1{font-size:2.25em;font-weight:300;padding-bottom:.3em}html body h2{font-size:1.75em;font-weight:400;padding-bottom:.3em}html body h3{font-size:1.5em;font-weight:500}html body h4{font-size:1.25em;font-weight:600}html body h5{font-size:1.1em;font-weight:600}html body h6{font-size:1em;font-weight:600}html body h1,html body h2,html body h3,html body h4,html body h5{font-weight:600}html body h5{font-size:1em}html body h6{color:#5c5c5c}html body strong{color:#000}html body del{color:#5c5c5c}html body a:not([href]){color:inherit;text-decoration:none}html body a{color:#08c;text-decoration:none}html body a:hover{color:#00a3f5;text-decoration:none}html body img{max-width:100%}html body>p{margin-top:0;margin-bottom:16px;word-wrap:break-word}html body>ul,html body>ol{margin-bottom:16px}html body ul,html body ol{padding-left:2em}html body ul.no-list,html body ol.no-list{padding:0;list-style-type:none}html body ul ul,html body ul ol,html body ol ol,html body ol ul{margin-top:0;margin-bottom:0}html body li{margin-bottom:0}html body li.task-list-item{list-style:none}html body li>p{margin-top:0;margin-bottom:0}html body .task-list-item-checkbox{margin:0 .2em .25em -1.8em;vertical-align:middle}html body .task-list-item-checkbox:hover{cursor:pointer}html body blockquote{margin:16px 0;font-size:inherit;padding:0 15px;color:#5c5c5c;background-color:#f0f0f0;border-left:4px solid #d6d6d6}html body blockquote>:first-child{margin-top:0}html body blockquote>:last-child{margin-bottom:0}html body hr{height:4px;margin:32px 0;background-color:#d6d6d6;border:0 none}html body table{margin:10px 0 15px 0;border-collapse:collapse;border-spacing:0;display:block;width:100%;overflow:auto;word-break:normal;word-break:keep-all}html body table th{font-weight:bold;color:#000}html body table td,html body table th{border:1px solid #d6d6d6;padding:6px 13px}html body dl{padding:0}html body dl dt{padding:0;margin-top:16px;font-size:1em;font-style:italic;font-weight:bold}html body dl dd{padding:0 16px;margin-bottom:16px}html body code{font-family:Menlo,Monaco,Consolas,'Courier New',monospace;font-size:.85em !important;color:#000;background-color:#f0f0f0;border-radius:3px;padding:.2em 0}html body code::before,html body code::after{letter-spacing:-0.2em;content:"\00a0"}html body pre>code{padding:0;margin:0;font-size:.85em !important;word-break:normal;white-space:pre;background:transparent;border:0}html body .highlight{margin-bottom:16px}html body .highlight pre,html body pre{padding:1em;overflow:auto;font-size:.85em !important;line-height:1.45;border:#d6d6d6;border-radius:3px}html body .highlight pre{margin-bottom:0;word-break:normal}html body pre code,html body pre tt{display:inline;max-width:initial;padding:0;margin:0;overflow:initial;line-height:inherit;word-wrap:normal;background-color:transparent;border:0}html body pre code:before,html body pre tt:before,html body pre code:after,html body pre tt:after{content:normal}html body p,html body blockquote,html body ul,html body ol,html body dl,html body pre{margin-top:0;margin-bottom:16px}html body kbd{color:#000;border:1px solid #d6d6d6;border-bottom:2px solid #c7c7c7;padding:2px 4px;background-color:#f0f0f0;border-radius:3px}@media print{html body{background-color:#fff}html body h1,html body h2,html body h3,html body h4,html body h5,html body h6{color:#000;page-break-after:avoid}html body blockquote{color:#5c5c5c}html body pre{page-break-inside:avoid}html body table{display:table}html body img{display:block;max-width:100%;max-height:100%}html body pre,html body code{word-wrap:break-word;white-space:pre}}.markdown-preview{width:100%;height:100%;box-sizing:border-box}.markdown-preview .pagebreak,.markdown-preview .newpage{page-break-before:always}.markdown-preview pre.line-numbers{position:relative;padding-left:3.8em;counter-reset:linenumber}.markdown-preview pre.line-numbers>code{position:relative}.markdown-preview pre.line-numbers .line-numbers-rows{position:absolute;pointer-events:none;top:1em;font-size:100%;left:0;width:3em;letter-spacing:-1px;border-right:1px solid #999;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none}.markdown-preview pre.line-numbers .line-numbers-rows>span{pointer-events:none;display:block;counter-increment:linenumber}.markdown-preview pre.line-numbers .line-numbers-rows>span:before{content:counter(linenumber);color:#999;display:block;padding-right:.8em;text-align:right}.markdown-preview .mathjax-exps .MathJax_Display{text-align:center !important}.markdown-preview:not([for="preview"]) .code-chunk .btn-group{display:none}.markdown-preview:not([for="preview"]) .code-chunk .status{display:none}.markdown-preview:not([for="preview"]) .code-chunk .output-div{margin-bottom:16px}.markdown-preview .md-toc{padding:0}.markdown-preview .md-toc .md-toc-link-wrapper .md-toc-link{display:inline;padding:.25rem 0}.markdown-preview .md-toc .md-toc-link-wrapper .md-toc-link p,.markdown-preview .md-toc .md-toc-link-wrapper .md-toc-link div{display:inline}.markdown-preview .md-toc .md-toc-link-wrapper.highlighted .md-toc-link{font-weight:800}.scrollbar-style::-webkit-scrollbar{width:8px}.scrollbar-style::-webkit-scrollbar-track{border-radius:10px;background-color:transparent}.scrollbar-style::-webkit-scrollbar-thumb{border-radius:5px;background-color:rgba(150,150,150,0.66);border:4px solid rgba(150,150,150,0.66);background-clip:content-box}html body[for="html-export"]:not([data-presentation-mode]){position:relative;width:100%;height:100%;top:0;left:0;margin:0;padding:0;overflow:auto}html body[for="html-export"]:not([data-presentation-mode]) .markdown-preview{position:relative;top:0}@media screen and (min-width:914px){html body[for="html-export"]:not([data-presentation-mode]) .markdown-preview{padding:2em calc(50% - 457px + 2em)}}@media screen and (max-width:914px){html body[for="html-export"]:not([data-presentation-mode]) .markdown-preview{padding:2em}}@media screen and (max-width:450px){html body[for="html-export"]:not([data-presentation-mode]) .markdown-preview{font-size:14px !important;padding:1em}}@media print{html body[for="html-export"]:not([data-presentation-mode]) #sidebar-toc-btn{display:none}}html body[for="html-export"]:not([data-presentation-mode]) #sidebar-toc-btn{position:fixed;bottom:8px;left:8px;font-size:28px;cursor:pointer;color:inherit;z-index:99;width:32px;text-align:center;opacity:.4}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] #sidebar-toc-btn{opacity:1}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc{position:fixed;top:0;left:0;width:300px;height:100%;padding:32px 0 48px 0;font-size:14px;box-shadow:0 0 4px rgba(150,150,150,0.33);box-sizing:border-box;overflow:auto;background-color:inherit}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc::-webkit-scrollbar{width:8px}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc::-webkit-scrollbar-track{border-radius:10px;background-color:transparent}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc::-webkit-scrollbar-thumb{border-radius:5px;background-color:rgba(150,150,150,0.66);border:4px solid rgba(150,150,150,0.66);background-clip:content-box}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc a{text-decoration:none}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc .md-toc{padding:0 16px}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc .md-toc .md-toc-link-wrapper .md-toc-link{display:inline;padding:.25rem 0}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc .md-toc .md-toc-link-wrapper .md-toc-link p,html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc .md-toc .md-toc-link-wrapper .md-toc-link div{display:inline}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc .md-toc .md-toc-link-wrapper.highlighted .md-toc-link{font-weight:800}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .markdown-preview{left:300px;width:calc(100% -  300px);padding:2em calc(50% - 457px -  300px/2);margin:0;box-sizing:border-box}@media screen and (max-width:1274px){html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .markdown-preview{padding:2em}}@media screen and (max-width:450px){html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .markdown-preview{width:100%}}html body[for="html-export"]:not([data-presentation-mode]):not([html-show-sidebar-toc]) .markdown-preview{left:50%;transform:translateX(-50%)}html body[for="html-export"]:not([data-presentation-mode]):not([html-show-sidebar-toc]) .md-sidebar-toc{display:none}
+/* Please visit the URL below for more information: */
+/*   https://shd101wyy.github.io/markdown-preview-enhanced/#/customize-css */
+
+      </style>
+    </head>
+    <body for="html-export">
+      <div class="mume markdown-preview  ">
+      <div align="center"> 
+<style>
+        body {
+            background-color: white;
+            color: black;
+            transition: background-color 0.5s, color 0.5s; /* Esto añade una suave transición al cambiar los colores */
+        }
+
+        body.dark-mode {
+            background-color: #1E2021;
+            color: white;
+            
+        }
+      body.dark-mode strong ,body.dark-mode h1, body.dark-mode h2, body.dark-mode h3, body.dark-mode h4, body.dark-mode h5, body.dark-mode h6{
+            color: white;
+        }
+      body.dark-mode blockquote{
+         filter: invert(1);
+      }
+        button{
+         font-family: 'Roboto', sans-serif;
+         font-size: 14px;
+         font-weight: bolt;
+         background: #1e90FF;
+         width: 100px;
+         padding: 7px;
+         text-align: center;
+         text-decoration: none;
+         text-transform: uppercase;
+         color: #fff;
+         border-radius: 6px;
+         cursor: pointer;
+         box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+        }
+    </style>
+<script>
+    function toggleDarkMode() {
+        const body = document.body;
+        if (body.classList.contains('dark-mode')) {
+            body.classList.remove('dark-mode');
+        } else {
+            body.classList.add('dark-mode');
+        }
+    }
+</script>
+<p><img src="https://img.shields.io/badge/contributions-welcome-brightgreen.svg?style=flat"><img src="https://img.shields.io/github/stars/Fabian-Martinez-Rincon/Computabilidad-y-Complejidad"><img src="https://img.shields.io/github/repo-size/Fabian-Martinez-Rincon/Computabilidad-y-Complejidad"></p>
+<img src="https://readme-typing-svg.demolab.com?font=Fira+Code&amp;size=30&amp;duration=1200&amp;pause=1000&amp;color=F78E23&amp;center=true&amp;width=635&amp;lines=Deep Learning">
+<p><a title href="https://cafecito.app/ei-materias"><img src="Documentos\Cafecito.png" alt></a></p>
+</div>
+<blockquote>
+<p>pip install pandas</p>
+</blockquote>
+<div align="center">
+<button onclick="toggleDarkMode()">Oscuro</button>
+<a href="https://github.com/Fabian-Martinez-Rincon/CyC/tree/main"><button style="background: #ecec00"> &#x2B50; </button></a>
+<a href="https://github.com/Fabian-Martinez-Rincon"><button style="background: #000000">Github</button></a>
+<p><img src="https://github.com/Fabian-Martinez-Rincon/Fabian-Martinez-Rincon/assets/55964635/7eebf649-e558-43e2-ad5f-9977dc5ff3e5
+" height="10" width="100%"></p></div><p></p>
+<ul>
+<li>Parcial 22/11/2023</li>
+<li><a href="https://drive.google.com/drive/folders/1mNm_nba9il7KAgwj2YnQAqEJ9tF0PlKl">Drive 2023</a></li>
+<li><a href>Practica 0 Introducci&#xF3;n a Python</a></li>
+<li><a href="#pr%C3%A1ctica-2-mt">Practica 1 An&#xE1;lisis de datos y preprocesamientoCarpeta</a></li>
+</ul>
+<p><img src="https://github.com/Fabian-Martinez-Rincon/Fabian-Martinez-Rincon/assets/55964635/7eebf649-e558-43e2-ad5f-9977dc5ff3e5
+" height="10" width="100%"></p>
+<h1 class="mume-header" id="practica-0-introducci%C3%B3n-a-python">Practica 0 Introducci&#xF3;n a Python</h1>
+
+<hr>
+<h2 class="mume-header" id="jupyter-notebooks-y-google-colab">Jupyter Notebooks y Google Colab</h2>
+
+<h3 class="mume-header" id="ejercicio-1">Ejercicio 1</h3>
+
+<p><strong>&#xBF;Qu&#xE9; es un cuaderno (notebook) Jupyter?</strong><br>
+Un cuaderno Jupyter es una herramienta de c&#xF3;digo abierto que permite crear y compartir documentos interactivos que contienen c&#xF3;digo, ecuaciones, visualizaciones y texto narrativo. Los cuadernos Jupyter son ideales para crear un ambiente donde se pueden combinar la ejecuci&#xF3;n de c&#xF3;digo y la documentaci&#xF3;n en un solo lugar.</p>
+<p><strong>&#xBF;Qu&#xE9; es una celda?</strong><br>
+Una celda es la unidad b&#xE1;sica de contenido en un cuaderno Jupyter. Es un espacio donde se puede escribir c&#xF3;digo para ser ejecutado o se puede introducir texto para explicaci&#xF3;n y documentaci&#xF3;n.</p>
+<p><strong>&#xBF;Qu&#xE9; tipos de celdas existen?</strong></p>
+<p>Existen tres tipos principales de celdas en un cuaderno Jupyter:</p>
+<ol>
+<li><strong>Celda de c&#xF3;digo:</strong> Contiene c&#xF3;digo que puede ser ejecutado. Al correr esta celda, los resultados se muestran debajo de ella.</li>
+<li><strong>Celda de texto/Markdown:</strong> Esta celda contiene texto formateado utilizando el lenguaje Markdown. Permite incluir explicaciones, im&#xE1;genes, enlaces y m&#xE1;s.</li>
+<li><strong>Celda Raw:</strong> Es una celda que no se renderiza. Se utiliza para introducir contenido que no se desea ejecutar o transformar.</li>
+</ol>
+<p><strong>&#xBF;Qu&#xE9; es un entorno de ejecuci&#xF3;n?</strong><br>
+Un entorno de ejecuci&#xF3;n se refiere al contexto o espacio donde se ejecuta un c&#xF3;digo o programa. Proporciona todas las herramientas, bibliotecas, variables y recursos necesarios para que el c&#xF3;digo funcione correctamente. En el &#xE1;mbito de Jupyter, el entorno de ejecuci&#xF3;n es gestionado por un &quot;kernel&quot;, que es el encargado de interpretar y ejecutar el c&#xF3;digo escrito en las celdas.</p>
+<p><strong>&#xBF;Cu&#xE1;nto tiempo dura una sesi&#xF3;n de un entorno?</strong><br>
+La duraci&#xF3;n de una sesi&#xF3;n de entorno de ejecuci&#xF3;n var&#xED;a seg&#xFA;n d&#xF3;nde se est&#xE9; ejecutando el cuaderno:</p>
+<ul>
+<li><strong>Localmente:</strong> En un Jupyter Notebook ejecutado en una m&#xE1;quina local, el entorno de ejecuci&#xF3;n (o kernel) contin&#xFA;a funcionando hasta que el usuario lo detiene o cierra el cuaderno.</li>
+<li><strong>En plataformas en la nube:</strong> En plataformas como Google Colab, la duraci&#xF3;n de una sesi&#xF3;n puede ser limitada. Por ejemplo, las sesiones gratuitas en Google Colab suelen tener una duraci&#xF3;n m&#xE1;xima de 12 horas. Es recomendable revisar la documentaci&#xF3;n espec&#xED;fica de la plataforma que se est&#xE9; utilizando para detalles precisos.</li>
+</ul>
+<p><img src="https://github.com/Fabian-Martinez-Rincon/Fabian-Martinez-Rincon/assets/55964635/7eebf649-e558-43e2-ad5f-9977dc5ff3e5
+" height="10" width="100%"></p>
+<h3 class="mume-header" id="ejercicio-2">Ejercicio 2</h3>
+
+<p>Las celdas de c&#xF3;digo de un cuaderno no solo permiten ejecutar instrucciones de Python. Utilizando el s&#xED;mbolo ! (signo de admiraci&#xF3;n) es posible ejecutar los comandos disponibles desde la l&#xED;nea de comandos de su sistema operativo. De esta manera <code>!ls</code> o <code>!dir</code> (dependiendo el sistema operativo) listan los archivos de la carpeta actual y <code>!pip</code> o <code>!conda</code> permiten administrar los paquetes python.</p>
+<p>Experimente la ejecuci&#xF3;n de varios comandos del sistema operativo a trav&#xE9;s de celdas de c&#xF3;digo. Entre las<br>
+pruebas incluya la invocaci&#xF3;n de:</p>
+<ul>
+<li>python para determinar la versi&#xF3;n instalada.</li>
+<li>pip show nombre (pandas, numpy, tensorflow, etc.) de paquete para saber la versi&#xF3;n instalada.</li>
+<li>comandos que permitan crear y eliminar carpetas.</li>
+</ul>
+<p>El ejercicio que has mencionado se refiere a la ejecuci&#xF3;n de comandos del sistema operativo directamente desde un cuaderno Jupyter (o IPython). A continuaci&#xF3;n, te mostrar&#xE9; c&#xF3;mo hacerlo:</p>
+<ul>
+<li><a href="Practica\Practica0\ejercicio2.ipynb">Resoluci&#xF3;n en el jupyter Notebook</a></li>
+</ul>
+<p><img src="https://github.com/Fabian-Martinez-Rincon/Fabian-Martinez-Rincon/assets/55964635/7eebf649-e558-43e2-ad5f-9977dc5ff3e5
+" height="10" width="100%"></p>
+<h3 class="mume-header" id="ejercicio-3">Ejercicio 3</h3>
+
+<p>Dado que el entorno de ejecuci&#xF3;n de un cuaderno Colab tiene un l&#xED;mite de duraci&#xF3;n, es importante descargar o salvar fuera del mismo los archivos que se generan.</p>
+<p>Conecte su cuenta de Google Drive con Google Colab:</p>
+<ul>
+<li>Acceda a la url <a href="https://colab.research.google.com/">https://colab.research.google.com/</a> y autent&#xED;quese con su usuario Google. Cree un nuevo cuaderno (notebook).</li>
+<li>Asocie Drive con Colab. Compruebe que Drive queda montado como una carpeta.</li>
+<li>Suba un peque&#xF1;o archivo de texto a Drive (NO a Colab) y &#xE1;bralo desde una celda de c&#xF3;digo Colab utilizando el siguiente c&#xF3;digo:<pre data-role="codeBlock" data-info="python" class="language-python">ruta_arch <span class="token operator">=</span> <span class="token string">&apos;....&apos;</span> <span class="token comment"># ruta y nombre a archivo a LEER desde su drive</span>
+f <span class="token operator">=</span> <span class="token builtin">open</span><span class="token punctuation">(</span>ruta_arch<span class="token punctuation">,</span> <span class="token string">&apos;r&apos;</span><span class="token punctuation">)</span> <span class="token comment"># abre archivo para leer</span>
+<span class="token keyword keyword-print">print</span><span class="token punctuation">(</span>f<span class="token punctuation">.</span>readlines<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token comment"># imprime contenido en pantalla</span>
+f<span class="token punctuation">.</span>close<span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token comment"># cierra archivo</span>
+</pre></li>
+<li>Genere el siguiente archivo y gu&#xE1;rdelo en su carpeta Drive, comprobando que efectivamente se ha creado con el contenido esperado:<pre data-role="codeBlock" data-info="python" class="language-python">ruta_arch <span class="token operator">=</span> <span class="token string">&apos;....&apos;</span> <span class="token comment"># ruta y nombre a archivo a ESCRIBIR en su drive</span>
+f <span class="token operator">=</span> <span class="token builtin">open</span><span class="token punctuation">(</span>ruta_arch<span class="token punctuation">,</span> <span class="token string">&apos;w&apos;</span><span class="token punctuation">)</span> <span class="token comment"># abre archivo para escribir</span>
+texto <span class="token operator">=</span> <span class="token string">&apos;Esta es una linea de texto\nEsta es otra l&#xED;nea de text&apos;</span>
+f<span class="token punctuation">.</span>writelines<span class="token punctuation">(</span>texto<span class="token punctuation">)</span> <span class="token comment"># escribe contenido en archivo</span>
+f<span class="token punctuation">.</span>close<span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token comment"># cierra archivo</span>
+</pre></li>
+</ul>
+<p><img src="https://github.com/Fabian-Martinez-Rincon/Fabian-Martinez-Rincon/assets/55964635/7eebf649-e558-43e2-ad5f-9977dc5ff3e5
+" height="10" width="100%"></p>
+
+      </div>
+      
+      
+    
+    
+    
+    
+    
+    
+    
+    
+  
+    </body></html>

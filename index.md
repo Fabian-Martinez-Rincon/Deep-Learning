@@ -58,7 +58,7 @@
 
 </div>
 
-> das
+> pip install pandas
 
 <div align='center'>
 <button onclick="toggleDarkMode()">Oscuro</button>
@@ -87,7 +87,7 @@
 ### Ejercicio 1
 
 **¿Qué es un cuaderno (notebook) Jupyter?**
-Un cuaderno Jupyter es una herramienta de código abierto que permite crear y compartir documentos interactivos que contienen código, ecuaciones, visualizaciones y texto narrativo. Estos cuadernos se utilizan ampliamente en análisis de datos, enseñanza, ciencia de datos, entre otros. Los cuadernos Jupyter son ideales para crear un ambiente donde se pueden combinar la ejecución de código y la documentación en un solo lugar.
+Un cuaderno Jupyter es una herramienta de código abierto que permite crear y compartir documentos interactivos que contienen código, ecuaciones, visualizaciones y texto narrativo. Los cuadernos Jupyter son ideales para crear un ambiente donde se pueden combinar la ejecución de código y la documentación en un solo lugar.
 
 **¿Qué es una celda?**
 Una celda es la unidad básica de contenido en un cuaderno Jupyter. Es un espacio donde se puede escribir código para ser ejecutado o se puede introducir texto para explicación y documentación.
