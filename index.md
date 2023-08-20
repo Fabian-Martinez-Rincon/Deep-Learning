@@ -482,3 +482,86 @@ Después de la modificación, el tensor se convierte en:
 
 
 ## Biblioteca Pandas
+
+Una de las estructuras de datos principales de Pandas es el `DataFrame`, que es esencialmente una tabla bidimensional que puede contener datos de diferentes tipos, similar a una hoja de cálculo o una tabla SQL.
+
+> [Stack Overflow](https://stackoverflow.com/questions/76126686/appending-a-single-row-to-a-dataframe-in-pandas-2-0) con Pandas 2.0.3 (No existe el append)
+
+<table><td>
+
+```python
+import pandas as pd
+data = {
+    'Nombre': ['Juan', 'María', 'Pedro', 'José'],
+    'Edad': [20, 26, 18, 22],
+    'Pais': ['Argentina', 'Peru', 'Brasil', 'Chile']
+}
+
+# Convertir el diccionario en un DataFrame
+df = pd.DataFrame(data)
+
+nuevo_registro = {'Nombre': 'Pablo', 'Edad': 30, 'Pais': 'Colombia'}
+df2 = pd.DataFrame(nuevo_registro, df.index[-1:]+1)
+
+df = pd.concat([df, df2])
+
+columnas = df.columns.tolist()
+
+df['Pais'] = df['Pais'].replace('Peru', 'Watemala')
+
+print(columnas)
+print(df)
+```
+</td><td>
+
+| Nombre | Edad | País      |
+|--------|------|-----------|
+| Juan   | 20   | Argentina |
+| María  | 26   | Perú      |
+| Pedro  | 18   | Brasil    |
+| José   | 22   | Chile     |
+</td>
+</table>
+
+<img src= 'https://github.com/Fabian-Martinez-Rincon/Fabian-Martinez-Rincon/assets/55964635/7eebf649-e558-43e2-ad5f-9977dc5ff3e5
+' height="10" width="100%">
+
+### Ejercicio 2
+
+Guarde en disco el dataframe del ejercicio anterior en los siguientes formatos:
+- archivo con separación por delimitadores (tabulador como separador).
+- archivo con separación por delimitadores (punto y coma como separador).
+- archivo excel.
+- archivo json.
+
+```python
+import os
+import pandas as pd
+
+DATA = {
+    'Nombre': ['Juan', 'María', 'Pedro', 'José'],
+    'Edad': [20, 26, 18, 22],
+    'Pais': ['Argentina', 'Peru', 'Brasil', 'Chile']
+}
+PATH_BASE = os.path.dirname(os.path.abspath(__file__))
+
+PATH_PROSSED = os.path.join(PATH_BASE, "PandasEjercicio2")
+
+PATH_SOURCE_TAB = os.path.join(PATH_PROSSED, "Ej2Tap.csv")
+PATH_SOURCE_SPOT = os.path.join(PATH_PROSSED, "Ej2Spot.csv")
+PATH_SOURCE_EXCEL = os.path.join(PATH_PROSSED, "Ej2Ex.xlsx")
+PATH_SOURCE_JSON = os.path.join(PATH_PROSSED, "Ej2Json.json")
+
+if not os.path.exists(PATH_PROSSED):
+    os.makedirs(PATH_PROSSED, exist_ok=True)
+
+DF = pd.DataFrame(DATA)
+
+DF.to_csv(PATH_SOURCE_TAB,index=False,sep='\t')
+DF.to_csv(PATH_SOURCE_SPOT,index=False,sep=';')
+#DF.to_excel(pd.ExcelWriter(PATH_SOURCE_EXCEL),index=False)
+DF.to_json(PATH_SOURCE_JSON,orient='records',lines=True) 
+```
+
+> No me funciona para crear excels
+
