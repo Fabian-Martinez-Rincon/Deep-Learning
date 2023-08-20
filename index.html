@@ -322,6 +322,7 @@ Extensi&#xF3;n para ver todo clean <a href="https://darkreader.org/">Dark Reader
 " height="10" width="100%"></p></div><p></p>
 <ul>
 <li>Parcial 06/11/2023</li>
+<li><a href="README.html">Parte Teoricoa</a></li>
 <li><a href="#practica-0-introducci%C3%B3n-a-python">Practica 0 Introducci&#xF3;n a Python</a></li>
 <li><a href>Practica 1 An&#xE1;lisis de datos y preprocesamientoCarpeta</a></li>
 </ul>
@@ -665,6 +666,106 @@ M347 1759 V0 H263 V1759 v0 v1759 h84z"/></svg></span></span></span><span class="
 " height="10" width="100%"></p>
 <h2 class="mume-header" id="biblioteca-pandas">Biblioteca Pandas</h2>
 
+<p>Una de las estructuras de datos principales de Pandas es el <code>DataFrame</code>, que es esencialmente una tabla bidimensional que puede contener datos de diferentes tipos, similar a una hoja de c&#xE1;lculo o una tabla SQL.</p>
+<blockquote>
+<p><a href="https://stackoverflow.com/questions/76126686/appending-a-single-row-to-a-dataframe-in-pandas-2-0">Stack Overflow</a> con Pandas 2.0.3 (No existe el append)</p>
+</blockquote>
+<table><tbody><tr><td>
+<pre data-role="codeBlock" data-info="python" class="language-python"><span class="token keyword keyword-import">import</span> pandas <span class="token keyword keyword-as">as</span> pd
+data <span class="token operator">=</span> <span class="token punctuation">{</span>
+    <span class="token string">&apos;Nombre&apos;</span><span class="token punctuation">:</span> <span class="token punctuation">[</span><span class="token string">&apos;Juan&apos;</span><span class="token punctuation">,</span> <span class="token string">&apos;Mar&#xED;a&apos;</span><span class="token punctuation">,</span> <span class="token string">&apos;Pedro&apos;</span><span class="token punctuation">,</span> <span class="token string">&apos;Jos&#xE9;&apos;</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+    <span class="token string">&apos;Edad&apos;</span><span class="token punctuation">:</span> <span class="token punctuation">[</span><span class="token number">20</span><span class="token punctuation">,</span> <span class="token number">26</span><span class="token punctuation">,</span> <span class="token number">18</span><span class="token punctuation">,</span> <span class="token number">22</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+    <span class="token string">&apos;Pais&apos;</span><span class="token punctuation">:</span> <span class="token punctuation">[</span><span class="token string">&apos;Argentina&apos;</span><span class="token punctuation">,</span> <span class="token string">&apos;Peru&apos;</span><span class="token punctuation">,</span> <span class="token string">&apos;Brasil&apos;</span><span class="token punctuation">,</span> <span class="token string">&apos;Chile&apos;</span><span class="token punctuation">]</span>
+<span class="token punctuation">}</span>
+
+<span class="token comment"># Convertir el diccionario en un DataFrame</span>
+df <span class="token operator">=</span> pd<span class="token punctuation">.</span>DataFrame<span class="token punctuation">(</span>data<span class="token punctuation">)</span>
+
+nuevo_registro <span class="token operator">=</span> <span class="token punctuation">{</span><span class="token string">&apos;Nombre&apos;</span><span class="token punctuation">:</span> <span class="token string">&apos;Pablo&apos;</span><span class="token punctuation">,</span> <span class="token string">&apos;Edad&apos;</span><span class="token punctuation">:</span> <span class="token number">30</span><span class="token punctuation">,</span> <span class="token string">&apos;Pais&apos;</span><span class="token punctuation">:</span> <span class="token string">&apos;Colombia&apos;</span><span class="token punctuation">}</span>
+df2 <span class="token operator">=</span> pd<span class="token punctuation">.</span>DataFrame<span class="token punctuation">(</span>nuevo_registro<span class="token punctuation">,</span> df<span class="token punctuation">.</span>index<span class="token punctuation">[</span><span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">:</span><span class="token punctuation">]</span><span class="token operator">+</span><span class="token number">1</span><span class="token punctuation">)</span>
+
+df <span class="token operator">=</span> pd<span class="token punctuation">.</span>concat<span class="token punctuation">(</span><span class="token punctuation">[</span>df<span class="token punctuation">,</span> df2<span class="token punctuation">]</span><span class="token punctuation">)</span>
+
+columnas <span class="token operator">=</span> df<span class="token punctuation">.</span>columns<span class="token punctuation">.</span>tolist<span class="token punctuation">(</span><span class="token punctuation">)</span>
+
+df<span class="token punctuation">[</span><span class="token string">&apos;Pais&apos;</span><span class="token punctuation">]</span> <span class="token operator">=</span> df<span class="token punctuation">[</span><span class="token string">&apos;Pais&apos;</span><span class="token punctuation">]</span><span class="token punctuation">.</span>replace<span class="token punctuation">(</span><span class="token string">&apos;Peru&apos;</span><span class="token punctuation">,</span> <span class="token string">&apos;Watemala&apos;</span><span class="token punctuation">)</span>
+
+<span class="token keyword keyword-print">print</span><span class="token punctuation">(</span>columnas<span class="token punctuation">)</span>
+<span class="token keyword keyword-print">print</span><span class="token punctuation">(</span>df<span class="token punctuation">)</span>
+</pre></td><td>
+<table>
+<thead>
+<tr>
+<th>Nombre</th>
+<th>Edad</th>
+<th>Pa&#xED;s</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Juan</td>
+<td>20</td>
+<td>Argentina</td>
+</tr>
+<tr>
+<td>Mar&#xED;a</td>
+<td>26</td>
+<td>Per&#xFA;</td>
+</tr>
+<tr>
+<td>Pedro</td>
+<td>18</td>
+<td>Brasil</td>
+</tr>
+<tr>
+<td>Jos&#xE9;</td>
+<td>22</td>
+<td>Chile</td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr></tbody></table>
+<p><img src="https://github.com/Fabian-Martinez-Rincon/Fabian-Martinez-Rincon/assets/55964635/7eebf649-e558-43e2-ad5f-9977dc5ff3e5
+" height="10" width="100%"></p>
+<h3 class="mume-header" id="ejercicio-2-2">Ejercicio 2</h3>
+
+<p>Guarde en disco el dataframe del ejercicio anterior en los siguientes formatos:</p>
+<ul>
+<li>archivo con separaci&#xF3;n por delimitadores (tabulador como separador).</li>
+<li>archivo con separaci&#xF3;n por delimitadores (punto y coma como separador).</li>
+<li>archivo excel.</li>
+<li>archivo json.</li>
+</ul>
+<pre data-role="codeBlock" data-info="python" class="language-python"><span class="token keyword keyword-import">import</span> os
+<span class="token keyword keyword-import">import</span> pandas <span class="token keyword keyword-as">as</span> pd
+
+DATA <span class="token operator">=</span> <span class="token punctuation">{</span>
+    <span class="token string">&apos;Nombre&apos;</span><span class="token punctuation">:</span> <span class="token punctuation">[</span><span class="token string">&apos;Juan&apos;</span><span class="token punctuation">,</span> <span class="token string">&apos;Mar&#xED;a&apos;</span><span class="token punctuation">,</span> <span class="token string">&apos;Pedro&apos;</span><span class="token punctuation">,</span> <span class="token string">&apos;Jos&#xE9;&apos;</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+    <span class="token string">&apos;Edad&apos;</span><span class="token punctuation">:</span> <span class="token punctuation">[</span><span class="token number">20</span><span class="token punctuation">,</span> <span class="token number">26</span><span class="token punctuation">,</span> <span class="token number">18</span><span class="token punctuation">,</span> <span class="token number">22</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+    <span class="token string">&apos;Pais&apos;</span><span class="token punctuation">:</span> <span class="token punctuation">[</span><span class="token string">&apos;Argentina&apos;</span><span class="token punctuation">,</span> <span class="token string">&apos;Peru&apos;</span><span class="token punctuation">,</span> <span class="token string">&apos;Brasil&apos;</span><span class="token punctuation">,</span> <span class="token string">&apos;Chile&apos;</span><span class="token punctuation">]</span>
+<span class="token punctuation">}</span>
+PATH_BASE <span class="token operator">=</span> os<span class="token punctuation">.</span>path<span class="token punctuation">.</span>dirname<span class="token punctuation">(</span>os<span class="token punctuation">.</span>path<span class="token punctuation">.</span>abspath<span class="token punctuation">(</span>__file__<span class="token punctuation">)</span><span class="token punctuation">)</span>
+
+PATH_PROSSED <span class="token operator">=</span> os<span class="token punctuation">.</span>path<span class="token punctuation">.</span>join<span class="token punctuation">(</span>PATH_BASE<span class="token punctuation">,</span> <span class="token string">&quot;PandasEjercicio2&quot;</span><span class="token punctuation">)</span>
+
+PATH_SOURCE_TAB <span class="token operator">=</span> os<span class="token punctuation">.</span>path<span class="token punctuation">.</span>join<span class="token punctuation">(</span>PATH_PROSSED<span class="token punctuation">,</span> <span class="token string">&quot;Ej2Tap.csv&quot;</span><span class="token punctuation">)</span>
+PATH_SOURCE_SPOT <span class="token operator">=</span> os<span class="token punctuation">.</span>path<span class="token punctuation">.</span>join<span class="token punctuation">(</span>PATH_PROSSED<span class="token punctuation">,</span> <span class="token string">&quot;Ej2Spot.csv&quot;</span><span class="token punctuation">)</span>
+PATH_SOURCE_EXCEL <span class="token operator">=</span> os<span class="token punctuation">.</span>path<span class="token punctuation">.</span>join<span class="token punctuation">(</span>PATH_PROSSED<span class="token punctuation">,</span> <span class="token string">&quot;Ej2Ex.xlsx&quot;</span><span class="token punctuation">)</span>
+PATH_SOURCE_JSON <span class="token operator">=</span> os<span class="token punctuation">.</span>path<span class="token punctuation">.</span>join<span class="token punctuation">(</span>PATH_PROSSED<span class="token punctuation">,</span> <span class="token string">&quot;Ej2Json.json&quot;</span><span class="token punctuation">)</span>
+
+<span class="token keyword keyword-if">if</span> <span class="token keyword keyword-not">not</span> os<span class="token punctuation">.</span>path<span class="token punctuation">.</span>exists<span class="token punctuation">(</span>PATH_PROSSED<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    os<span class="token punctuation">.</span>makedirs<span class="token punctuation">(</span>PATH_PROSSED<span class="token punctuation">,</span> exist_ok<span class="token operator">=</span><span class="token boolean">True</span><span class="token punctuation">)</span>
+
+DF <span class="token operator">=</span> pd<span class="token punctuation">.</span>DataFrame<span class="token punctuation">(</span>DATA<span class="token punctuation">)</span>
+
+DF<span class="token punctuation">.</span>to_csv<span class="token punctuation">(</span>PATH_SOURCE_TAB<span class="token punctuation">,</span>index<span class="token operator">=</span><span class="token boolean">False</span><span class="token punctuation">,</span>sep<span class="token operator">=</span><span class="token string">&apos;\t&apos;</span><span class="token punctuation">)</span>
+DF<span class="token punctuation">.</span>to_csv<span class="token punctuation">(</span>PATH_SOURCE_SPOT<span class="token punctuation">,</span>index<span class="token operator">=</span><span class="token boolean">False</span><span class="token punctuation">,</span>sep<span class="token operator">=</span><span class="token string">&apos;;&apos;</span><span class="token punctuation">)</span>
+<span class="token comment">#DF.to_excel(pd.ExcelWriter(PATH_SOURCE_EXCEL),index=False)</span>
+DF<span class="token punctuation">.</span>to_json<span class="token punctuation">(</span>PATH_SOURCE_JSON<span class="token punctuation">,</span>orient<span class="token operator">=</span><span class="token string">&apos;records&apos;</span><span class="token punctuation">,</span>lines<span class="token operator">=</span><span class="token boolean">True</span><span class="token punctuation">)</span> 
+</pre><blockquote>
+<p>No me funciona para crear excels</p>
+</blockquote>
 
       </div>
       
