@@ -1,72 +1,8 @@
-![index](https://github.com/Fabian-Martinez-Rincon/Deep-Learning/assets/55964635/0ce9741b-5e0c-4932-970e-317c107c7470)
-
-
-
-<img src= 'https://i.gifer.com/origin/8c/8cd3f1898255c045143e1da97fbabf10_w200.gif' height="20" width="100%">
-
-
-
-### Ejercicio 2
-Genere el código necesario para recorrer simultáneamente 2 listas con la misma cantidad de elementos e imprima los mismos utilizando un único for (tip: función zip).
-
-<table >
-    <thead>
-        <tr>
-            <th>Código</th>
-            <th>Salida</th>
-        </tr>
-    </thead>
-    <tbody>
-        <tr>
-            <td>
-
-```python
-lista1 = [1, 2, 3, 4, 5]
-lista2 = ['a', 'b', 'c', 'd', 'e']
-
-for elemento1, elemento2 in zip(lista1, lista2):
-    print(elemento1, elemento2)
-```
-
-</td>
-<td>
-  1 a<br>
-  2 b<br>
-  3 c<br>
-  4 d<br>
-  5 e
-</td>
-</tr>
-</tbody>
-</table>
+![image](https://github.com/Fabian-Martinez-Rincon/Deep-Learning/assets/55964635/4f685244-bcdb-4bb9-b436-4d5f31b96e64)
 
 
 <img src= 'https://i.gifer.com/origin/8c/8cd3f1898255c045143e1da97fbabf10_w200.gif' height="20" width="100%">
 
-### Ejercicio 3
-Implemente una función que a partir de la lista que recibe cómo parámetro, retorne una nueva lista sin elementos repetidos. Compruebe su correcto funcionamiento.
-
-```python
-def sin_repetidos(lista):
-    """
-    Esta función recibe una lista y retorna una nueva lista
-     sin elementos repetidos.
-    """
-    return list(dict.fromkeys(lista))
-
-# Prueba
-lista_original = [1, 2, 2, 3, 4, 4, 4, 5, 6, 6, 7]
-lista_sin_repetidos = sin_repetidos(lista_original)
-
-lista_sin_repetidos
-```
-
-> [1, 2, 3, 4, 5, 6, 7]
-
-![](2023-08-16-00-25-18.png)
-
-
-<img src= 'https://i.gifer.com/origin/8c/8cd3f1898255c045143e1da97fbabf10_w200.gif' height="20" width="100%">
 
 ### Ejercicio 4
 Implemente una función que calcule la distancia entre 2 puntos (2D). Utilice la función sqrt del paquete math para implementarla y compruebe el correcto funcionamiento de la misma.

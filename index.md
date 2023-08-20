@@ -184,6 +184,8 @@ Investigue/repase que son las listas, tuplas, conjuntos y diccionarios nativos d
 - Se definen usando llaves `{}` con pares clave-valor separados por `:`.
 </td></tr></table>
 
+*Ejemplo Practico*
+
 ```python
 lista = [1, 2, 3, 4, 5]
 print(lista)
@@ -207,6 +209,70 @@ for clave, valor in diccionario.items():
 
 print(diccionario["a"])
 # 1
+```
+
+<img src= 'https://github.com/Fabian-Martinez-Rincon/Fabian-Martinez-Rincon/assets/55964635/7eebf649-e558-43e2-ad5f-9977dc5ff3e5
+' height="10" width="100%">
+
+### Ejercicio 2
+Genere el código necesario para recorrer simultáneamente 2 listas con la misma cantidad de elementos e imprima los mismos utilizando un único for (tip: función zip).
+
+<table >
+    <thead>
+        <tr>
+            <th>Código</th>
+            <th>Salida</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>
+
+```python
+lista1 = [1, 2, 3, 4, 5]
+lista2 = ['a', 'b', 'c', 'd', 'e']
+
+for elemento1, elemento2 in zip(lista1, lista2):
+    print(elemento1, elemento2)
+```
+
+</td>
+<td>
+  1 a<br>
+  2 b<br>
+  3 c<br>
+  4 d<br>
+  5 e
+</td>
+</tr>
+</tbody>
+</table>
+
+
+<img src= 'https://github.com/Fabian-Martinez-Rincon/Fabian-Martinez-Rincon/assets/55964635/7eebf649-e558-43e2-ad5f-9977dc5ff3e5
+' height="10" width="100%">
+
+### Ejercicio 3
+Implemente una función que a partir de la lista que recibe cómo parámetro, retorne una nueva lista sin elementos repetidos. Compruebe su correcto funcionamiento.
+
+```python
+def eliminar_duplicados(lista):
+    return list(dict.fromkeys(lista))
+```
+
+*Ejemplos para probar la función*
+
+```python
+ejemplo1 = [1, 2, 3, 1, 2, 4, 5]
+ejemplo2 = ["a", "b", "a", "c", "d", "b"]
+ejemplo3 = [True, False, True, True]
+
+resultado1 = eliminar_duplicados(ejemplo1)
+resultado2 = eliminar_duplicados(ejemplo2)
+resultado3 = eliminar_duplicados(ejemplo3)
+
+print(resultado1, resultado2, resultado3)
+# [1, 2, 3, 4, 5] ['a', 'b', 'c', 'd'] [True, False]
 ```
 
 <img src= 'https://github.com/Fabian-Martinez-Rincon/Fabian-Martinez-Rincon/assets/55964635/7eebf649-e558-43e2-ad5f-9977dc5ff3e5

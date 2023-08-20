@@ -421,6 +421,7 @@ f<span class="token punctuation">.</span>close<span class="token punctuation">(<
 <li>Se definen usando llaves <code>{}</code> con pares clave-valor separados por <code>:</code>.</li>
 </ul>
 </td></tr></tbody></table>
+<p><em>Ejemplo Practico</em></p>
 <pre data-role="codeBlock" data-info="python" class="language-python">lista <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">,</span> <span class="token number">4</span><span class="token punctuation">,</span> <span class="token number">5</span><span class="token punctuation">]</span>
 <span class="token keyword keyword-print">print</span><span class="token punctuation">(</span>lista<span class="token punctuation">)</span>
 <span class="token comment"># [1, 2, 3, 4, 5]</span>
@@ -443,6 +444,55 @@ diccionario <span class="token operator">=</span> <span class="token punctuation
 
 <span class="token keyword keyword-print">print</span><span class="token punctuation">(</span>diccionario<span class="token punctuation">[</span><span class="token string">&quot;a&quot;</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
 <span class="token comment"># 1</span>
+</pre><p><img src="https://github.com/Fabian-Martinez-Rincon/Fabian-Martinez-Rincon/assets/55964635/7eebf649-e558-43e2-ad5f-9977dc5ff3e5
+" height="10" width="100%"></p>
+<h3 class="mume-header" id="ejercicio-2-1">Ejercicio 2</h3>
+
+<p>Genere el c&#xF3;digo necesario para recorrer simult&#xE1;neamente 2 listas con la misma cantidad de elementos e imprima los mismos utilizando un &#xFA;nico for (tip: funci&#xF3;n zip).</p>
+<table>
+    <thead>
+        <tr>
+            <th>C&#xF3;digo</th>
+            <th>Salida</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>
+<pre data-role="codeBlock" data-info="python" class="language-python">lista1 <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">,</span> <span class="token number">4</span><span class="token punctuation">,</span> <span class="token number">5</span><span class="token punctuation">]</span>
+lista2 <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token string">&apos;a&apos;</span><span class="token punctuation">,</span> <span class="token string">&apos;b&apos;</span><span class="token punctuation">,</span> <span class="token string">&apos;c&apos;</span><span class="token punctuation">,</span> <span class="token string">&apos;d&apos;</span><span class="token punctuation">,</span> <span class="token string">&apos;e&apos;</span><span class="token punctuation">]</span>
+
+<span class="token keyword keyword-for">for</span> elemento1<span class="token punctuation">,</span> elemento2 <span class="token keyword keyword-in">in</span> <span class="token builtin">zip</span><span class="token punctuation">(</span>lista1<span class="token punctuation">,</span> lista2<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token keyword keyword-print">print</span><span class="token punctuation">(</span>elemento1<span class="token punctuation">,</span> elemento2<span class="token punctuation">)</span>
+</pre></td>
+<td>
+  1 a<br>
+  2 b<br>
+  3 c<br>
+  4 d<br>
+  5 e
+</td>
+</tr>
+</tbody>
+</table>
+<p><img src="https://github.com/Fabian-Martinez-Rincon/Fabian-Martinez-Rincon/assets/55964635/7eebf649-e558-43e2-ad5f-9977dc5ff3e5
+" height="10" width="100%"></p>
+<h3 class="mume-header" id="ejercicio-3-1">Ejercicio 3</h3>
+
+<p>Implemente una funci&#xF3;n que a partir de la lista que recibe c&#xF3;mo par&#xE1;metro, retorne una nueva lista sin elementos repetidos. Compruebe su correcto funcionamiento.</p>
+<pre data-role="codeBlock" data-info="python" class="language-python"><span class="token keyword keyword-def">def</span> <span class="token function">eliminar_duplicados</span><span class="token punctuation">(</span>lista<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token keyword keyword-return">return</span> <span class="token builtin">list</span><span class="token punctuation">(</span><span class="token builtin">dict</span><span class="token punctuation">.</span>fromkeys<span class="token punctuation">(</span>lista<span class="token punctuation">)</span><span class="token punctuation">)</span>
+</pre><p><em>Ejemplos para probar la funci&#xF3;n</em></p>
+<pre data-role="codeBlock" data-info="python" class="language-python">ejemplo1 <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">4</span><span class="token punctuation">,</span> <span class="token number">5</span><span class="token punctuation">]</span>
+ejemplo2 <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token string">&quot;a&quot;</span><span class="token punctuation">,</span> <span class="token string">&quot;b&quot;</span><span class="token punctuation">,</span> <span class="token string">&quot;a&quot;</span><span class="token punctuation">,</span> <span class="token string">&quot;c&quot;</span><span class="token punctuation">,</span> <span class="token string">&quot;d&quot;</span><span class="token punctuation">,</span> <span class="token string">&quot;b&quot;</span><span class="token punctuation">]</span>
+ejemplo3 <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token boolean">True</span><span class="token punctuation">,</span> <span class="token boolean">False</span><span class="token punctuation">,</span> <span class="token boolean">True</span><span class="token punctuation">,</span> <span class="token boolean">True</span><span class="token punctuation">]</span>
+
+resultado1 <span class="token operator">=</span> eliminar_duplicados<span class="token punctuation">(</span>ejemplo1<span class="token punctuation">)</span>
+resultado2 <span class="token operator">=</span> eliminar_duplicados<span class="token punctuation">(</span>ejemplo2<span class="token punctuation">)</span>
+resultado3 <span class="token operator">=</span> eliminar_duplicados<span class="token punctuation">(</span>ejemplo3<span class="token punctuation">)</span>
+
+<span class="token keyword keyword-print">print</span><span class="token punctuation">(</span>resultado1<span class="token punctuation">,</span> resultado2<span class="token punctuation">,</span> resultado3<span class="token punctuation">)</span>
+<span class="token comment"># [1, 2, 3, 4, 5] [&apos;a&apos;, &apos;b&apos;, &apos;c&apos;, &apos;d&apos;] [True, False]</span>
 </pre><p><img src="https://github.com/Fabian-Martinez-Rincon/Fabian-Martinez-Rincon/assets/55964635/7eebf649-e558-43e2-ad5f-9977dc5ff3e5
 " height="10" width="100%"></p>
 
