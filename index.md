@@ -318,7 +318,8 @@ Por lo tanto, la función calcula correctamente la distancia entre dos puntos en
 
 Ejemplo del grafico
 
-![image](https://github.com/Fabian-Martinez-Rincon/Fabian-Martinez-Rincon/assets/55964635/4aa4ccb4-2f8d-424d-9018-7d9340c05b86)
+<img src='https://github.com/Fabian-Martinez-Rincon/Fabian-Martinez-Rincon/assets/55964635/4aa4ccb4-2f8d-424d-9018-7d9340c05b86' width='70%'>
+
 
 <img src= 'https://github.com/Fabian-Martinez-Rincon/Fabian-Martinez-Rincon/assets/55964635/7eebf649-e558-43e2-ad5f-9977dc5ff3e5
 ' height="10" width="100%">
