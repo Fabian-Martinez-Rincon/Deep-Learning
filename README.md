@@ -21,9 +21,9 @@
 - [Cheat Sheet](https://ipgp.github.io/scientific_python_cheat_sheet/)
 - Practica 0 Introducción a Python
   - [Jupyter Notebooks y Google Colab]()
-  - [Repaso de Python]()
-  - [Biblioteca Numpy]()
-  - [Biblioteca Pandas]()
+  - [Repaso de Python](#repaso-de-python)
+  - [Biblioteca Numpy](#biblioteca-numpy)
+  - [Biblioteca Pandas](#biblioteca-pandas)
 
 
 <img src= 'https://i.gifer.com/origin/8c/8cd3f1898255c045143e1da97fbabf10_w200.gif' height="20" width="100%">
@@ -31,9 +31,8 @@
 
 # Practica 0 Introducción a Python
 
-
-
 # Jupyter Notebooks y Google Colab
+
 ### Ejercicio 1
 **Respuestas:**
 - **¿Qué es un cuaderno (notebook) Jupyter?**
@@ -323,11 +322,11 @@ ejemplo1, ejemplo2, ejemplo3, ejemplo4, ejemplo5
 ## Ejercicio 1
 Practique la creación de vectores, matrices y tensores y responda:
 
-### ¿Qué diferencias hay entre los constructores, array, empty, full, zeros, ones, identity?
+¿Qué diferencias hay entre los constructores, array, empty, full, zeros, ones, identity?
 
-### ¿Qué tipos de datos pueden utilizarse? ¿En qué se diferencian? ¿Cuál es el tipo que se toma por defecto?¿Es siempre el mismo?
+¿Qué tipos de datos pueden utilizarse? ¿En qué se diferencian? ¿Cuál es el tipo que se toma por defecto?¿Es siempre el mismo?
 
-### ¿Qué funciones se pueden utilizar para generar arreglos con números aleatorios?
+¿Qué funciones se pueden utilizar para generar arreglos con números aleatorios?
 
 <img src= 'https://i.gifer.com/origin/8c/8cd3f1898255c045143e1da97fbabf10_w200.gif' height="20" width="100%">
 
@@ -354,3 +353,29 @@ Investigue y realice ejemplos que utilicen funciones para manipular elementos de
 Los arrays de numpy (así como las listas) proveen de un mecanismo versátil para hacer o referenciar una sección de los mismos. Practique este mecanismo de acceso con vectores, matrices y tensores imprimiendo y modificando distintas regiones de los mismos
 
 <img src= 'https://i.gifer.com/origin/8c/8cd3f1898255c045143e1da97fbabf10_w200.gif' height="20" width="100%">
+
+# Biblioteca Pandas
+
+### Ejercicio 1
+Investigue el funcionamiento del Dataframe de Pandas y cree uno con la información de la siguiente tabla:
+
+| Nombre | Edad | País      |
+|--------|------|-----------|
+| Juan   | 20   | Argentina |
+| María  | 26   | Peru      |
+| Pedro  | 18   | Brasil    |
+| José   | 22   | Chile     |
+
+
+Realice las siguientes operaciones:
+- Imprimir los nombres de las columnas.
+- Agregar a la tabla a Pablo que tiene 30 años y es originario de Colombia. Agregarlo de 2 formas diferentes.
+- Eliminar de la tabla al Pedro repetido.
+- Modificar los atributos de países que dicen “Peru” (sin acento) y reemplazarlos por “Perú” (con acento).
+
+### Ejercicio 2
+Guarde en disco el dataframe del ejercicio anterior en los siguientes formatos:
+- archivo con separación por delimitadores (tabulador como separador).
+- archivo con separación por delimitadores (punto y coma como separador).
+- archivo excel.
+- archivo json.
