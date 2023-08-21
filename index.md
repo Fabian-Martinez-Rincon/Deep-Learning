@@ -66,12 +66,11 @@
 <a href='https://github.com/Fabian-Martinez-Rincon/Deep-Learning/tree/main'><button style='background: #ecec00'> ⭐ </button></a>
 <a href='https://github.com/Fabian-Martinez-Rincon'><button style='background: #000000'>Github</button></a>
 
-<img src= 'https://github.com/Fabian-Martinez-Rincon/Fabian-Martinez-Rincon/assets/55964635/7eebf649-e558-43e2-ad5f-9977dc5ff3e5
-' height="10" width="100%"></div>
+<img src= 'https://github.com/Fabian-Martinez-Rincon/Fabian-Martinez-Rincon/assets/55964635/7eebf649-e558-43e2-ad5f-9977dc5ff3e5' height="10" width="100%"></div>
 
 
 - Parcial 06/11/2023
-- [Parte Teorica](/README.html)
+- [Parte Teorica](/Documentos/Teoria.html)
 - [Practica 0 Introducción a Python](#practica-0-introducción-a-python)
 - [Practica 1 Análisis de datos y preprocesamientoCarpeta]()
 
