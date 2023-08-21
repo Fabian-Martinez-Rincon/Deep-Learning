@@ -60,6 +60,7 @@
 
 > pip install pandas
 > Extensión para ver todo clean [Dark Reader](https://darkreader.org/)
+> pip install openpyxl
 
 <div align='center'>
 <button onclick="toggleDarkMode()">Oscuro</button>

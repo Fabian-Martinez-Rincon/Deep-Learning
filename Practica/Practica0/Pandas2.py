@@ -22,5 +22,5 @@ DF = pd.DataFrame(DATA)
 
 DF.to_csv(PATH_SOURCE_TAB,index=False,sep='\t')
 DF.to_csv(PATH_SOURCE_SPOT,index=False,sep=';')
-#DF.to_excel(pd.ExcelWriter(PATH_SOURCE_EXCEL),index=False)
+DF.to_excel(PATH_SOURCE_EXCEL)
 DF.to_json(PATH_SOURCE_JSON,orient='records',lines=True) 

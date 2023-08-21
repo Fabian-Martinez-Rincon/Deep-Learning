@@ -314,6 +314,7 @@ pre[data-line] .line-highlight[data-end]:after {
 " height="10" width="100%"></p></div><p></p>
 <ul>
 <li><a href="..\index.html">Practica</a></li>
+<li><a href="https://www.youtube.com/watch?v=CtkMzCIXOWk">Polars (alternativa a pandas)</a></li>
 </ul>
 <h2 class="mume-header" id="01a_introduccion">01a_Introduccion</h2>
 
@@ -322,40 +323,39 @@ pre[data-line] .line-highlight[data-end]:after {
 <h3 class="mume-header" id="discreta">Discreta</h3>
 
 <p>Una variable discreta es aquella que puede tomar un n&#xFA;mero finito o un conjunto contable infinito de valores. Estos valores suelen ser resultados espec&#xED;ficos y separados, y no pueden ser subdivididos de manera significativa.</p>
-<ul>
-<li><strong>Ejemplos</strong>
+<table>
+<tbody><tr><td>Ejemplos</td><td>Caracteristicas</td></tr>
+<tr><td>
 <ul>
 <li>El n&#xFA;mero de estudiantes en una clase (puedes tener 20, 21, 22 estudiantes, pero no 20.5 estudiantes).</li>
 <li>El n&#xFA;mero de lanzamientos de una moneda hasta obtener cara.</li>
 <li>La cantidad de libros en una estanter&#xED;a.</li>
 </ul>
-</li>
-<li><strong>Caracter&#xED;sticas</strong>
+</td><td>
 <ul>
 <li>Los valores que puede tomar son contables.</li>
 <li>No tiene sentido hablar de valores &quot;entre&quot; dos valores discretos adyacentes. Por ejemplo, entre 3 y 4 estudiantes, no hay ning&#xFA;n valor v&#xE1;lido.</li>
 </ul>
-</li>
-</ul>
+</td></tr>
+</tbody></table>
 <h3 class="mume-header" id="continua">Continua</h3>
 
 <p>Una variable continua es aquella que puede tomar cualquier valor dentro de un rango espec&#xED;fico. Estos valores pueden ser subdivididos infinitamente, y hay un n&#xFA;mero infinito de valores posibles entre dos valores cualesquiera.</p>
-<ul>
-<li><strong>Ejemplos</strong>
+<table>
+<tbody><tr><td>Ejemplos</td><td>Caracteristicas</td></tr>
+<tr><td>
 <ul>
 <li>La altura de una persona (puede ser 1.75 metros, 1.751 metros, 1.7512 metros, etc.).</li>
 <li>El tiempo que tarda un corredor en completar una marat&#xF3;n.</li>
 <li>La temperatura de una habitaci&#xF3;n.</li>
 </ul>
-</li>
-<li><strong>Caracter&#xED;sticas</strong>
+</td><td>
 <ul>
 <li>Los valores que puede tomar son incontables dentro de un rango.</li>
 <li>Siempre hay valores intermedios entre dos valores cualesquiera, sin importar cu&#xE1;n cercanos est&#xE9;n.</li>
 </ul>
-</li>
-</ul>
-<p>En resumen, mientras que las variables discretas toman valores espec&#xED;ficos y separados, las variables continuas pueden tomar cualquier valor dentro de un rango continuo. Estas distinciones son fundamentales en estad&#xED;sticas, matem&#xE1;ticas y muchas &#xE1;reas de la ciencia y la ingenier&#xED;a.</p>
+</td></tr>
+</tbody></table>
 <img src="https://github.com/Fabian-Martinez-Rincon/Fabian-Martinez-Rincon/assets/55964635/7eebf649-e558-43e2-ad5f-9977dc5ff3e5" height="10" width="100%">
 <h3 class="mume-header" id="aprendizaje-supervisado">Aprendizaje Supervisado</h3>
 
@@ -363,62 +363,65 @@ pre[data-line] .line-highlight[data-end]:after {
 <h3 class="mume-header" id="clasificaci%C3%B3n">Clasificaci&#xF3;n</h3>
 
 <p>En problemas de clasificaci&#xF3;n, el objetivo es predecir una etiqueta categ&#xF3;rica o discreta para una entrada dada. Es decir, se clasifica la entrada en una de varias categor&#xED;as o clases.</p>
-<ul>
-<li><strong>Ejemplos</strong>
+<table><tbody><tr><td>
 <ul>
 <li>Determinar si un correo electr&#xF3;nico es spam o no spam.</li>
 <li>Clasificar una imagen en categor&#xED;as como &quot;gato&quot;, &quot;perro&quot; o &quot;p&#xE1;jaro&quot;.</li>
 <li>Diagnosticar si un paciente tiene una enfermedad espec&#xED;fica o no.</li>
 </ul>
-</li>
-<li><strong>Caracter&#xED;sticas</strong>:
-<ul>
-<li>Las respuestas (etiquetas) son discretas y pertenecen a un conjunto finito.</li>
-<li>No hay orden inherente entre las clases. Por ejemplo, en una clasificaci&#xF3;n de animales, &quot;gato&quot; no es mayor ni menor que &quot;perro&quot;.</li>
-</ul>
-</li>
-</ul>
+</td><td>
+<img src="https://github.com/Fabian-Martinez-Rincon/Fabian-Martinez-Rincon/assets/55964635/37c37b79-0381-4afb-b898-d04a698eec25" width="400px">
+</td></tr></tbody></table>
 <h3 class="mume-header" id="regresi%C3%B3n">Regresi&#xF3;n</h3>
 
 <p>En problemas de regresi&#xF3;n, el objetivo es predecir un valor continuo para una entrada dada. A diferencia de la clasificaci&#xF3;n, donde se predice una etiqueta de clase, en la regresi&#xF3;n se predice una cantidad num&#xE9;rica.</p>
-<ul>
-<li><strong>Ejemplos</strong>
+<table><tbody><tr><td>
 <ul>
 <li>Predecir el precio de una casa basado en sus caracter&#xED;sticas (tama&#xF1;o, ubicaci&#xF3;n, n&#xFA;mero de habitaciones, etc.).</li>
 <li>Estimar la temperatura de una ciudad en un d&#xED;a futuro.</li>
 <li>Prever las ventas de un producto en los pr&#xF3;ximos meses.</li>
 </ul>
-</li>
-<li><strong>Caracter&#xED;sticas</strong>
+</td><td>
+<img src="https://github.com/Fabian-Martinez-Rincon/Fabian-Martinez-Rincon/assets/55964635/99613447-4e22-4947-b037-b24b10919dc3" width="800px">
+</td></tr></tbody></table>
+<h3 class="mume-header" id="diferencias">Diferencias</h3>
+
+<table>
+<tbody><tr><td>Clasificaci&#xF3;n</td><td>Regresi&#xF3;n</td></tr>
+<tr><td>
+<ul>
+<li>Las respuestas (etiquetas) son discretas y pertenecen a un conjunto finito.</li>
+<li>No hay orden inherente entre las clases. Por ejemplo, en una clasificaci&#xF3;n de animales, &quot;gato&quot; no es mayor ni menor que &quot;perro&quot;.</li>
+</ul>
+</td><td>
 <ul>
 <li>Las respuestas son valores num&#xE9;ricos continuos.</li>
 <li>Hay un orden inherente en las respuestas. Por ejemplo, un precio de casa de $300,000 es mayor que uno de $200,000.</li>
 </ul>
-</li>
-</ul>
-
-<p><img src="https://github.com/Fabian-Martinez-Rincon/Fabian-Martinez-Rincon/assets/55964635/c7e97813-e3f9-4779-b3cd-39c1dc6127b9" alt="image"></p>
-<p>En resumen, la principal diferencia entre clasificaci&#xF3;n y regresi&#xF3;n en el aprendizaje supervisado radica en el tipo de respuesta que se est&#xE1; tratando de predecir. Si es una categor&#xED;a o clase, es un problema de clasificaci&#xF3;n. Si es un valor num&#xE9;rico continuo, es un problema de regresi&#xF3;n.</p>
+</td></tr>
+</tbody></table>
 <img src="https://github.com/Fabian-Martinez-Rincon/Fabian-Martinez-Rincon/assets/55964635/7eebf649-e558-43e2-ad5f-9977dc5ff3e5" height="10" width="100%">
-<h3 class="mume-header" id="red-neuronal-artificial">Red Neuronal Artificial</h3>
+<h2 class="mume-header" id="redes-neuronales-convolucionales">Redes Neuronales Convolucionales</h2>
 
-<p>Es un modelo computacional inspirado en la forma en que las redes neuronales biol&#xF3;gicas del cerebro humano procesan la informaci&#xF3;n. Est&#xE1; compuesta por unidades llamadas &quot;neuronas&quot; o &quot;nodos&quot; organizadas en capas. Aqu&#xED; tienes una representaci&#xF3;n visual simplificada de una RNA:</p>
-<p><img src="https://showme.redstarplugin.com/d/d:mfplYxEO" alt="Red Neuronal Artificial"></p>
-<p>Ahora, desglosemos los componentes y el funcionamiento b&#xE1;sico de una RNA:</p>
-<p><strong>Entradas (Input Layer)</strong><br>
-Aqu&#xED; es donde la red recibe la informaci&#xF3;n del mundo exterior. Cada neurona en esta capa representa una caracter&#xED;stica distinta del dato de entrada.</p>
-<p><strong>Capas Ocultas (Hidden Layers)</strong><br>
-Estas son las capas entre la entrada y la salida. Las neuronas en estas capas realizan transformaciones en los datos de entrada. Una RNA puede tener varias capas ocultas, y la profundidad de estas capas es lo que da lugar a la denominaci&#xF3;n &quot;redes neuronales profundas&quot; o &quot;deep learning&quot;.</p>
-<p><strong>Salidas (Output Layer)</strong><br>
-Esta capa produce el resultado o la predicci&#xF3;n de la red. El n&#xFA;mero de neuronas aqu&#xED; depende del tipo de tarea. Por ejemplo, para una tarea de clasificaci&#xF3;n binaria, podr&#xED;a haber solo una neurona.</p>
-<p><strong>Neurona</strong><br>
-Es la unidad b&#xE1;sica de una RNA. Recibe varias entradas, las multiplica por sus respectivos pesos, suma los productos y luego pasa el resultado a trav&#xE9;s de una funci&#xF3;n de activaci&#xF3;n para producir una salida.</p>
-<p><strong>Pesos</strong><br>
-Son valores que determinan la importancia de una entrada particular para una neurona. Estos se ajustan durante el proceso de entrenamiento para mejorar la precisi&#xF3;n de la red.</p>
-<p><strong>Funci&#xF3;n de Activaci&#xF3;n</strong><br>
-Es una funci&#xF3;n matem&#xE1;tica que determina si una neurona debe activarse o no. Las funciones de activaci&#xF3;n m&#xE1;s comunes incluyen la funci&#xF3;n sigmoide, ReLU (Rectified Linear Unit) y tanh.</p>
-<p>El entrenamiento de una RNA implica ajustar los pesos de las conexiones entre las neuronas para minimizar el error entre las predicciones de la red y los valores reales. Esto se hace utilizando algoritmos como el descenso del gradiente.</p>
-<p>Las RNAs son fundamentales en muchos campos del aprendizaje autom&#xE1;tico y la inteligencia artificial, incluyendo la visi&#xF3;n por computadora, el procesamiento del lenguaje natural, y la predicci&#xF3;n de series temporales, entre otros.</p>
+<p>Una Red Neuronal Convolucional es un tipo especializado de red neuronal dise&#xF1;ada espec&#xED;ficamente para procesar datos con una estructura similar a una cuadr&#xED;cula, como im&#xE1;genes.</p>
+<p><img src="https://github.com/Fabian-Martinez-Rincon/Fabian-Martinez-Rincon/assets/55964635/3eafca50-417f-4487-a85a-67a125350401" alt="image"></p>
+<ol>
+<li>
+<p><strong>Capas Convolucionales</strong>: Estas capas aplican un conjunto de filtros a la entrada. Cada filtro detecta caracter&#xED;sticas espec&#xED;ficas, como bordes, texturas o colores. La operaci&#xF3;n de convoluci&#xF3;n escanea la imagen con un peque&#xF1;o &quot;ventana&quot; y aplica una transformaci&#xF3;n para producir un mapa de caracter&#xED;sticas.</p>
+</li>
+<li>
+<p><strong>Funci&#xF3;n de Activaci&#xF3;n</strong>: Despu&#xE9;s de cada convoluci&#xF3;n, se aplica una funci&#xF3;n de activaci&#xF3;n, como la funci&#xF3;n ReLU (Rectified Linear Unit), para introducir no linealidades en el modelo. <a href="FuncionesDeActivacion.html">Mas informaci&#xF3;n</a></p>
+</li>
+<li>
+<p><strong>Pooling o Submuestreo</strong>: Estas capas reducen la dimensionalidad espacial (ancho y alto) de los datos, conservando las caracter&#xED;sticas m&#xE1;s importantes. Una t&#xE9;cnica com&#xFA;n es el &quot;max pooling&quot;, que selecciona el valor m&#xE1;ximo de un grupo de valores.</p>
+</li>
+<li>
+<p><strong>Capas Totalmente Conectadas (FC, Fully Connected)</strong>: Despu&#xE9;s de varias capas convolucionales y de pooling, las CNNs suelen tener una o m&#xE1;s capas totalmente conectadas que procesan la informaci&#xF3;n y producen la salida final, como una clasificaci&#xF3;n.</p>
+</li>
+<li>
+<p><strong>Clasificaci&#xF3;n</strong>: La &#xFA;ltima capa de una CNN generalmente produce una distribuci&#xF3;n de probabilidad sobre las clases objetivo, utilizando una funci&#xF3;n como la funci&#xF3;n softmax.</p>
+</li>
+</ol>
 <h2 class="mume-header" id="01b_analisis-de-datos">01b_Analisis de datos</h2>
 
 <h2 class="mume-header" id="01c_preprocesamiento-de-datos">01c_Preprocesamiento de datos</h2>
