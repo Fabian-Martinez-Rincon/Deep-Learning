@@ -261,7 +261,57 @@ pre[data-line] .line-highlight[data-end]:after {
     </head>
     <body for="html-export">
       <div class="mume markdown-preview  ">
-      <div align="center"><h2> &#x1F916; Deep Learning</h2></div>
+      <style>
+        body {
+            background-color: white;
+            color: black;
+            transition: background-color 0.5s, color 0.5s; /* Esto añade una suave transición al cambiar los colores */
+        }
+
+        body.dark-mode {
+            background-color: #1E2021;
+            color: white;
+            
+        }
+      body.dark-mode strong ,body.dark-mode h1, body.dark-mode h2, body.dark-mode h3, body.dark-mode h4, body.dark-mode h5, body.dark-mode h6{
+            color: white;
+        }
+      body.dark-mode blockquote{
+         filter: invert(1);
+      }
+        button{
+         font-family: 'Roboto', sans-serif;
+         font-size: 14px;
+         font-weight: bolt;
+         background: #1e90FF;
+         width: 100px;
+         padding: 7px;
+         text-align: center;
+         text-decoration: none;
+         text-transform: uppercase;
+         color: #fff;
+         border-radius: 6px;
+         cursor: pointer;
+         box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+        }
+    </style>
+<script>
+    function toggleDarkMode() {
+        const body = document.body;
+        if (body.classList.contains('dark-mode')) {
+            body.classList.remove('dark-mode');
+        } else {
+            body.classList.add('dark-mode');
+        }
+    }
+</script>
+<div align="center"><h2> &#x1F916; Deep Learning</h2></div>
+<div align="center">
+<button onclick="toggleDarkMode()">Oscuro</button>
+<a href="https://github.com/Fabian-Martinez-Rincon/Deep-Learning/tree/main"><button style="background: #ecec00"> &#x2B50; </button></a>
+<a href="https://github.com/Fabian-Martinez-Rincon"><button style="background: #000000">Github</button></a>
+<p><img src="https://github.com/Fabian-Martinez-Rincon/Fabian-Martinez-Rincon/assets/55964635/7eebf649-e558-43e2-ad5f-9977dc5ff3e5
+" height="10" width="100%"></p></div><p></p>
 <ul>
 <li><a href="index.html">Practica</a></li>
 </ul>
@@ -350,6 +400,25 @@ pre[data-line] .line-highlight[data-end]:after {
 <p><img src="https://github.com/Fabian-Martinez-Rincon/Fabian-Martinez-Rincon/assets/55964635/c7e97813-e3f9-4779-b3cd-39c1dc6127b9" alt="image"></p>
 <p>En resumen, la principal diferencia entre clasificaci&#xF3;n y regresi&#xF3;n en el aprendizaje supervisado radica en el tipo de respuesta que se est&#xE1; tratando de predecir. Si es una categor&#xED;a o clase, es un problema de clasificaci&#xF3;n. Si es un valor num&#xE9;rico continuo, es un problema de regresi&#xF3;n.</p>
 <img src="https://github.com/Fabian-Martinez-Rincon/Fabian-Martinez-Rincon/assets/55964635/7eebf649-e558-43e2-ad5f-9977dc5ff3e5" height="10" width="100%">
+<h3 class="mume-header" id="red-neuronal-artificial">Red Neuronal Artificial</h3>
+
+<p>Es un modelo computacional inspirado en la forma en que las redes neuronales biol&#xF3;gicas del cerebro humano procesan la informaci&#xF3;n. Est&#xE1; compuesta por unidades llamadas &quot;neuronas&quot; o &quot;nodos&quot; organizadas en capas. Aqu&#xED; tienes una representaci&#xF3;n visual simplificada de una RNA:</p>
+<p><img src="https://showme.redstarplugin.com/d/d:mfplYxEO" alt="Red Neuronal Artificial"></p>
+<p>Ahora, desglosemos los componentes y el funcionamiento b&#xE1;sico de una RNA:</p>
+<p><strong>Entradas (Input Layer)</strong><br>
+Aqu&#xED; es donde la red recibe la informaci&#xF3;n del mundo exterior. Cada neurona en esta capa representa una caracter&#xED;stica distinta del dato de entrada.</p>
+<p><strong>Capas Ocultas (Hidden Layers)</strong><br>
+Estas son las capas entre la entrada y la salida. Las neuronas en estas capas realizan transformaciones en los datos de entrada. Una RNA puede tener varias capas ocultas, y la profundidad de estas capas es lo que da lugar a la denominaci&#xF3;n &quot;redes neuronales profundas&quot; o &quot;deep learning&quot;.</p>
+<p><strong>Salidas (Output Layer)</strong><br>
+Esta capa produce el resultado o la predicci&#xF3;n de la red. El n&#xFA;mero de neuronas aqu&#xED; depende del tipo de tarea. Por ejemplo, para una tarea de clasificaci&#xF3;n binaria, podr&#xED;a haber solo una neurona.</p>
+<p><strong>Neurona</strong><br>
+Es la unidad b&#xE1;sica de una RNA. Recibe varias entradas, las multiplica por sus respectivos pesos, suma los productos y luego pasa el resultado a trav&#xE9;s de una funci&#xF3;n de activaci&#xF3;n para producir una salida.</p>
+<p><strong>Pesos</strong><br>
+Son valores que determinan la importancia de una entrada particular para una neurona. Estos se ajustan durante el proceso de entrenamiento para mejorar la precisi&#xF3;n de la red.</p>
+<p><strong>Funci&#xF3;n de Activaci&#xF3;n</strong><br>
+Es una funci&#xF3;n matem&#xE1;tica que determina si una neurona debe activarse o no. Las funciones de activaci&#xF3;n m&#xE1;s comunes incluyen la funci&#xF3;n sigmoide, ReLU (Rectified Linear Unit) y tanh.</p>
+<p>El entrenamiento de una RNA implica ajustar los pesos de las conexiones entre las neuronas para minimizar el error entre las predicciones de la red y los valores reales. Esto se hace utilizando algoritmos como el descenso del gradiente.</p>
+<p>Las RNAs son fundamentales en muchos campos del aprendizaje autom&#xE1;tico y la inteligencia artificial, incluyendo la visi&#xF3;n por computadora, el procesamiento del lenguaje natural, y la predicci&#xF3;n de series temporales, entre otros.</p>
 <h2 class="mume-header" id="01b_analisis-de-datos">01b_Analisis de datos</h2>
 
 <h2 class="mume-header" id="01c_preprocesamiento-de-datos">01c_Preprocesamiento de datos</h2>
