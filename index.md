@@ -72,14 +72,14 @@
 
 - Parcial 06/11/2023
 - [Parte Teorica](/Documentos/Teoria.html)
-- [Practica 0 Introducción a Python](#practica-0-introducción-a-python)
-- [Practica 1 Análisis de datos y preprocesamientoCarpeta]()
+- [Practica 1 Introducción a Python](#practica-1-introducción-a-python)
+- [Practica 2 Perceptron]()
 
 
 <img src= 'https://github.com/Fabian-Martinez-Rincon/Fabian-Martinez-Rincon/assets/55964635/7eebf649-e558-43e2-ad5f-9977dc5ff3e5
 ' height="10" width="100%">
 
-# Practica 0 Introducción a Python
+# Practica 1 Introducción a Python
 
 ---
 
@@ -524,8 +524,7 @@ print(df)
 </td>
 </table>
 
-<img src= 'https://github.com/Fabian-Martinez-Rincon/Fabian-Martinez-Rincon/assets/55964635/7eebf649-e558-43e2-ad5f-9977dc5ff3e5
-' height="10" width="100%">
+<img src= 'https://github.com/Fabian-Martinez-Rincon/Fabian-Martinez-Rincon/assets/55964635/7eebf649-e558-43e2-ad5f-9977dc5ff3e5' height="10" width="100%">
 
 ### Ejercicio 2
 
@@ -566,3 +565,59 @@ DF.to_json(PATH_SOURCE_JSON,orient='records',lines=True)
 
 > No me funciona para crear excels
 
+Realice las siguientes operaciones:
+- Imprimir los nombres de las columnas.
+- Agregar a la tabla a Pablo que tiene 30 años y es originario de Colombia. Agregarlo de 2 formas diferentes.
+- Eliminar de la tabla al Pedro repetido.
+- Modificar los atributos de países que dicen “Peru” (sin acento) y reemplazarlos por “Perú” (con acento).
+
+
+<img src= 'https://github.com/Fabian-Martinez-Rincon/Fabian-Martinez-Rincon/assets/55964635/7eebf649-e558-43e2-ad5f-9977dc5ff3e5' height="10" width="100%">
+
+# Practica 2 Perceptron
+
+>El objetivo principal de esta práctica es comprender el funcionamiento del perceptrón como bloque de construcción elemental de las redes neuronales. Adicionalmente se realiza un repaso sobre el análisis y preprocesamiento de los datos.
+
+### Ejercicio 1
+
+La Tabla 1 muestra información correspondiente a la resistencia adquirida por piezas de cierto material luego de haber sido sometidas a distintas temperaturas 
+
+
+
+<table><td>
+
+
+```markdown
+| TEMPERATURA | DUREZA | RESISTENCIA |
+|-------------|--------|-------------|
+| -12         | ALTA   | SUPERIOR    |
+| 20          | MEDIA  | SUPERIOR    |
+| 0           | ALTA   | SUPERIOR    |
+| 7           | MEDIA  | SUPERIOR    |
+| 11          | BAJA   | NORMAL      |
+| -30         | ALTA   | SUPERIOR    |
+| 63          | BAJA   | NORMAL      |
+| 94          | BAJA   | NORMAL      |
+| 45          | MEDIA  | NORMAL      |
+```
+
+</td><td>
+
+► **TEMPERATURA** es un atributo numérico que indica la temperatura en grados Celsius a la que fue sometido el material. 
+► **DUREZA** es el grado de dureza que presenta al finalizar el proceso. 
+► **RESISTENCIA** es el nivel de resistencia alcanzado por la pieza. 
+
+
+</td>
+</table>
+
+Se numerizó el atributo DUREZA de la siguiente forma: BAJA ➔ 0, MEDIA ➔ 30, ALTA ➔ 60
+
+- **a)** Luego de la numerización se calculó el coeficiente de correlación lineal entre los atributos TEMPERATURA y DUREZA y se obtuvo como resultado -0.78. ¿Cómo debe interpretarse este valor?
+- **b)** Luego de numerizar el atributo DUREZA, los ejemplos fueron utilizados para entrenar un perceptrón capaz de predecir correctamente el atributo RESISTENCIA. Los pesos obtenidos fueron los siguientes:
+
+w(TEMPERATURA) = 2.386; w(DUREZA) = -2.196; b = -0.023
+
+¿Cuál será la respuesta del perceptrón para un material sometido a una TEMPERATURA de 9 grados Celsius que presenta una DUREZA =BAJA?
+
+<img src= 'https://github.com/Fabian-Martinez-Rincon/Fabian-Martinez-Rincon/assets/559646357eebf649-e558-43e2-ad5f-9977dc5ff3e5' height="10" width="100%">

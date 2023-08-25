@@ -3,7 +3,7 @@
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
       
-      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.4/dist/katex.min.css">
+      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/katex.min.css">
       
       
       
@@ -323,12 +323,12 @@ pip install openpyxl</p>
 <ul>
 <li>Parcial 06/11/2023</li>
 <li><a href="Documentos\Teoria.html">Parte Teorica</a></li>
-<li><a href="#practica-0-introducci%C3%B3n-a-python">Practica 0 Introducci&#xF3;n a Python</a></li>
-<li><a href>Practica 1 An&#xE1;lisis de datos y preprocesamientoCarpeta</a></li>
+<li><a href="#practica-1-introducci%C3%B3n-a-python">Practica 1 Introducci&#xF3;n a Python</a></li>
+<li><a href>Practica 2 Perceptron</a></li>
 </ul>
 <p><img src="https://github.com/Fabian-Martinez-Rincon/Fabian-Martinez-Rincon/assets/55964635/7eebf649-e558-43e2-ad5f-9977dc5ff3e5
 " height="10" width="100%"></p>
-<h1 class="mume-header" id="practica-0-introducci%C3%B3n-a-python">Practica 0 Introducci&#xF3;n a Python</h1>
+<h1 class="mume-header" id="practica-1-introducci%C3%B3n-a-python">Practica 1 Introducci&#xF3;n a Python</h1>
 
 <hr>
 <h2 class="mume-header" id="jupyter-notebooks-y-google-colab">Jupyter Notebooks y Google Colab</h2>
@@ -726,8 +726,7 @@ df<span class="token punctuation">[</span><span class="token string">&apos;Pais&
 </table>
 </td>
 </tr></tbody></table>
-<p><img src="https://github.com/Fabian-Martinez-Rincon/Fabian-Martinez-Rincon/assets/55964635/7eebf649-e558-43e2-ad5f-9977dc5ff3e5
-" height="10" width="100%"></p>
+<img src="https://github.com/Fabian-Martinez-Rincon/Fabian-Martinez-Rincon/assets/55964635/7eebf649-e558-43e2-ad5f-9977dc5ff3e5" height="10" width="100%">
 <h3 class="mume-header" id="ejercicio-2-2">Ejercicio 2</h3>
 
 <p>Guarde en disco el dataframe del ejercicio anterior en los siguientes formatos:</p>
@@ -766,6 +765,48 @@ DF<span class="token punctuation">.</span>to_json<span class="token punctuation"
 </pre><blockquote>
 <p>No me funciona para crear excels</p>
 </blockquote>
+<p>Realice las siguientes operaciones:</p>
+<ul>
+<li>Imprimir los nombres de las columnas.</li>
+<li>Agregar a la tabla a Pablo que tiene 30 a&#xF1;os y es originario de Colombia. Agregarlo de 2 formas diferentes.</li>
+<li>Eliminar de la tabla al Pedro repetido.</li>
+<li>Modificar los atributos de pa&#xED;ses que dicen &#x201C;Peru&#x201D; (sin acento) y reemplazarlos por &#x201C;Per&#xFA;&#x201D; (con acento).</li>
+</ul>
+<img src="https://github.com/Fabian-Martinez-Rincon/Fabian-Martinez-Rincon/assets/55964635/7eebf649-e558-43e2-ad5f-9977dc5ff3e5" height="10" width="100%">
+<h1 class="mume-header" id="practica-2-perceptron">Practica 2 Perceptron</h1>
+
+<blockquote>
+<p>El objetivo principal de esta pr&#xE1;ctica es comprender el funcionamiento del perceptr&#xF3;n como bloque de construcci&#xF3;n elemental de las redes neuronales. Adicionalmente se realiza un repaso sobre el an&#xE1;lisis y preprocesamiento de los datos.</p>
+</blockquote>
+<h3 class="mume-header" id="ejercicio-1-2">Ejercicio 1</h3>
+
+<p>La Tabla 1 muestra informaci&#xF3;n correspondiente a la resistencia adquirida por piezas de cierto material luego de haber sido sometidas a distintas temperaturas</p>
+<table><tbody><tr><td>
+<pre data-role="codeBlock" data-info="markdown" class="language-markdown"><span class="token table"><span class="token table-header-row"><span class="token punctuation">|</span><span class="token table-header important"> TEMPERATURA </span><span class="token punctuation">|</span><span class="token table-header important"> DUREZA </span><span class="token punctuation">|</span><span class="token table-header important"> RESISTENCIA </span><span class="token punctuation">|</span>
+</span><span class="token table-line"><span class="token punctuation">|</span><span class="token punctuation">-------------</span><span class="token punctuation">|</span><span class="token punctuation">--------</span><span class="token punctuation">|</span><span class="token punctuation">-------------</span><span class="token punctuation">|</span>
+</span><span class="token table-data-rows"><span class="token punctuation">|</span><span class="token table-data"> -12         </span><span class="token punctuation">|</span><span class="token table-data"> ALTA   </span><span class="token punctuation">|</span><span class="token table-data"> SUPERIOR    </span><span class="token punctuation">|</span>
+<span class="token punctuation">|</span><span class="token table-data"> 20          </span><span class="token punctuation">|</span><span class="token table-data"> MEDIA  </span><span class="token punctuation">|</span><span class="token table-data"> SUPERIOR    </span><span class="token punctuation">|</span>
+<span class="token punctuation">|</span><span class="token table-data"> 0           </span><span class="token punctuation">|</span><span class="token table-data"> ALTA   </span><span class="token punctuation">|</span><span class="token table-data"> SUPERIOR    </span><span class="token punctuation">|</span>
+<span class="token punctuation">|</span><span class="token table-data"> 7           </span><span class="token punctuation">|</span><span class="token table-data"> MEDIA  </span><span class="token punctuation">|</span><span class="token table-data"> SUPERIOR    </span><span class="token punctuation">|</span>
+<span class="token punctuation">|</span><span class="token table-data"> 11          </span><span class="token punctuation">|</span><span class="token table-data"> BAJA   </span><span class="token punctuation">|</span><span class="token table-data"> NORMAL      </span><span class="token punctuation">|</span>
+<span class="token punctuation">|</span><span class="token table-data"> -30         </span><span class="token punctuation">|</span><span class="token table-data"> ALTA   </span><span class="token punctuation">|</span><span class="token table-data"> SUPERIOR    </span><span class="token punctuation">|</span>
+<span class="token punctuation">|</span><span class="token table-data"> 63          </span><span class="token punctuation">|</span><span class="token table-data"> BAJA   </span><span class="token punctuation">|</span><span class="token table-data"> NORMAL      </span><span class="token punctuation">|</span>
+<span class="token punctuation">|</span><span class="token table-data"> 94          </span><span class="token punctuation">|</span><span class="token table-data"> BAJA   </span><span class="token punctuation">|</span><span class="token table-data"> NORMAL      </span><span class="token punctuation">|</span>
+<span class="token punctuation">|</span><span class="token table-data"> 45          </span><span class="token punctuation">|</span><span class="token table-data"> MEDIA  </span><span class="token punctuation">|</span><span class="token table-data"> NORMAL      </span><span class="token punctuation">|</span>
+</span></span></pre></td><td>
+<p>&#x25BA; <strong>TEMPERATURA</strong> es un atributo num&#xE9;rico que indica la temperatura en grados Celsius a la que fue sometido el material.<br>
+&#x25BA; <strong>DUREZA</strong> es el grado de dureza que presenta al finalizar el proceso.<br>
+&#x25BA; <strong>RESISTENCIA</strong> es el nivel de resistencia alcanzado por la pieza.</p>
+</td>
+</tr></tbody></table>
+<p>Se numeriz&#xF3; el atributo DUREZA de la siguiente forma: BAJA &#x2794; 0, MEDIA &#x2794; 30, ALTA &#x2794; 60</p>
+<ul>
+<li><strong>a)</strong> Luego de la numerizaci&#xF3;n se calcul&#xF3; el coeficiente de correlaci&#xF3;n lineal entre los atributos TEMPERATURA y DUREZA y se obtuvo como resultado -0.78. &#xBF;C&#xF3;mo debe interpretarse este valor?</li>
+<li><strong>b)</strong> Luego de numerizar el atributo DUREZA, los ejemplos fueron utilizados para entrenar un perceptr&#xF3;n capaz de predecir correctamente el atributo RESISTENCIA. Los pesos obtenidos fueron los siguientes:</li>
+</ul>
+<p>w(TEMPERATURA) = 2.386; w(DUREZA) = -2.196; b = -0.023</p>
+<p>&#xBF;Cu&#xE1;l ser&#xE1; la respuesta del perceptr&#xF3;n para un material sometido a una TEMPERATURA de 9 grados Celsius que presenta una DUREZA =BAJA?</p>
+<img src="https://github.com/Fabian-Martinez-Rincon/Fabian-Martinez-Rincon/assets/559646357eebf649-e558-43e2-ad5f-9977dc5ff3e5" height="10" width="100%">
 
       </div>
       
