@@ -4,8 +4,7 @@ import perceptron as p
 import os
 
 FILE_PATH = './Practica/Datos/hojas.csv'
-file_path = './Practica/Datos/hojas.csv'
-df = pd.read_csv(file_path)
+df = pd.read_csv(FILE_PATH)
 print(df)
 print()
 

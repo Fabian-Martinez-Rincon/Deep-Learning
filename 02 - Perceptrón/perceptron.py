@@ -33,7 +33,7 @@ class Perceptron:
     >>> p.predict(np.array([1, 1]))
     1
     """
-    def __init__(self, input_size, lr=1, epochs=100):
+    def __init__(self, input_size, lr=1.0, epochs=100):
         self.W = np.zeros(input_size + 1)
         self.epochs = epochs
         self.lr = lr
