@@ -642,7 +642,12 @@ Se  desea  construir  una  Red  Neuronal,  formada  por  un  único  Perceptrón
 Se analizaron las imágenes y se extrajeron características geométricas representativas. El archivo hojas.csv contiene la cantidad de pixeles correspondientes al perímetro y el área de cada hoja.
 
 #### Parte a)
+
+
+
 Utilice los ejemplos del archivo hojas.csv para entrenar un perceptrón que permita reconocer cuando se trata de una hoja de helecho. Utilice una velocidad de aprendizaje (parámetro alfa) de 0.01 y una máxima cantidad de iteraciones MAX_ITE=300.
+
+
 
 <details><summary>Codigo completo</summary>
 
@@ -696,104 +701,57 @@ print("Pesos del Perceptrón:", perceptron.W)
 ```
 </details>
 
-Claro, aquí tienes una explicación detallada de cada parte del código:
 
 #### Importar bibliotecas
 
-```python
-import numpy as np
-import pandas as pd
-from sklearn.preprocessing import StandardScaler
-```
+<table><td>
 
-- `numpy`: Para operaciones matemáticas y manejo de arreglos.
-- `pandas`: Para la manipulación de datos y la lectura del archivo CSV.
-- `StandardScaler`: Para normalizar las características.
-
-#### Definición de la clase Perceptrón
+Entrenamiento
 
 ```python
-class Perceptron:
-    def __init__(self, input_size, lr=1, epochs=100):
-        self.W = np.zeros(input_size + 1)
-        self.epochs = epochs
-        self.lr = lr
+def fit(self, X, d):
+  for _ in range(self.epochs):
+    for i in range(d.shape[0]):
+      x = np.insert(X[i], 0, 1)
+      y = self.predict(X[i])
+      e = d[i] - y
+      self.W = self.W + self.lr * e * x
 ```
 
-- Se define una clase llamada `Perceptron` con un constructor (`__init__`) que inicializa los pesos (`self.W`), la tasa de aprendizaje (`self.lr`), y el número de épocas (`self.epochs`).
-
-```python
-    def activation_fn(self, x):
-        return 1 if x >= 0 else 0
-```
-
-- Función de activación de escalón unitario.
-
-```python
-    def predict(self, x):
-        x = np.insert(x, 0, 1)
-        z = self.W.T.dot(x)
-        return self.activation_fn(z)
-```
-
-- Método para realizar una predicción. Calcula el producto punto de los pesos y las características y luego aplica la función de activación.
-
-```python
-    def fit(self, X, d):
-        for _ in range(self.epochs):
-            for i in range(d.shape[0]):
-                x = np.insert(X[i], 0, 1)
-                y = self.predict(X[i])
-                e = d[i] - y
-                self.W = self.W + self.lr * e * x
-```
-
-- Método para entrenar el perceptrón. Actualiza los pesos según la regla de aprendizaje del perceptrón.
-
-#### Lectura del archivo y preparación de datos
-
-```python
-file_path = '/mnt/data/hojas.csv'
-df = pd.read_csv(file_path)
-```
-
-- Lee el archivo `hojas.csv` y lo almacena en un DataFrame de pandas.
-
-```python
-X = df[['Perimetro', 'Area']].values
-y = df['Clase'].apply(lambda x: 1 if x == 'Helecho' else 0).values
-```
-
-- Extrae las características (`X`) y las etiquetas (`y`) del DataFrame.
-
-```python
-scaler = StandardScaler()
-X_scaled = scaler.fit_transform(X)
-```
-
-- Normaliza las características utilizando `StandardScaler`.
-
-### Entrenamiento del Perceptrón
-
-```python
-perceptron = Perceptron(input_size=2, lr=0.01, epochs=300)
-perceptron.fit(X_scaled, y)
-```
-
-- Crea una instancia de la clase `Perceptron` y la entrena con los datos normalizados.
-
-```python
-print("Pesos del Perceptrón:", perceptron.W)
-```
-
-- Imprime los pesos del perceptrón entrenado.
-
-Espero que esto aclare cualquier duda sobre el código. ¿Hay algo más en lo que pueda ayudarte?
+</td><td>
 
 ![image](https://github.com/Fabian-Martinez-Rincon/Fabian-Martinez-Rincon/assets/55964635/8df959a9-d4bb-4e5c-b780-a15beacd855f)
 
+</td></table>
+
+- **Predic** Método para realizar una predicción. Calcula el producto punto de los pesos y las características y luego aplica la función de activación.
+
+
+
+<img src= 'https://github.com/Fabian-Martinez-Rincon/Fabian-Martinez-Rincon/assets/55964635/7eebf649-e558-43e2-ad5f-9977dc5ff3e5' height="10" width="100%">
+
+
+
 #### Parte b)
 A partir de los pesos del perceptrón entrenado, indique cuál es la función discriminante obtenida.
+
+Lamento las dificultades con la visualización. Aquí está la función discriminante corregida con formato matemático.
+
+La función discriminante del perceptrón es:
+
+\[
+f(\mathbf{x}) = W_0 + W_1 \times \text{{Perimetro\_normalizado}} + W_2 \times \text{{Area\_normalizada}}
+\]
+
+Con los pesos \( W = [0, 0.0219, -0.0222] \), la función discriminante para este caso específico sería:
+
+\[
+f(\mathbf{x}) = 0 + 0.0219 \times \text{{Perimetro\_normalizado}} - 0.0222 \times \text{{Area\_normalizada}}
+\]
+
+Si \( f(\mathbf{x}) \geq 0 \), la clase predicha será "Helecho"; de lo contrario, será "Hoja".
+
+Espero que ahora se vea correctamente. ¿Hay algo más en lo que pueda ayudarte?
 
 <img src= 'https://github.com/Fabian-Martinez-Rincon/Fabian-Martinez-Rincon/assets/55964635/7eebf649-e558-43e2-ad5f-9977dc5ff3e5' height="10" width="100%">
 
