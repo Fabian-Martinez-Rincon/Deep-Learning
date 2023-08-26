@@ -73,7 +73,7 @@
 - Parcial 06/11/2023
 - [Parte Teorica](/Documentos/Teoria.html)
 - [Practica 1 Introducción a Python](#practica-1-introducción-a-python)
-- [Practica 2 Perceptron]()
+- [Practica 2 Perceptron](#practica-2-perceptron)
 
 
 <img src= 'https://github.com/Fabian-Martinez-Rincon/Fabian-Martinez-Rincon/assets/55964635/7eebf649-e558-43e2-ad5f-9977dc5ff3e5
@@ -647,84 +647,39 @@ Se analizaron las imágenes y se extrajeron características geométricas repres
 
 Utilice los ejemplos del archivo hojas.csv para entrenar un perceptrón que permita reconocer cuando se trata de una hoja de helecho. Utilice una velocidad de aprendizaje (parámetro alfa) de 0.01 y una máxima cantidad de iteraciones MAX_ITE=300.
 
-
-
-<details><summary>Codigo completo</summary>
-
 ```python
-import numpy as np
 import pandas as pd
 from sklearn.preprocessing import StandardScaler
+import perceptron as p
 
-# Definir la clase Perceptrón
-class Perceptron:
-    def __init__(self, input_size, lr=1, epochs=100):
-        self.W = np.zeros(input_size + 1)
-        self.epochs = epochs
-        self.lr = lr
-    
-    def activation_fn(self, x):
-        return 1 if x >= 0 else 0
-
-    def predict(self, x):
-        x = np.insert(x, 0, 1)
-        z = self.W.T.dot(x)
-        return self.activation_fn(z)
-
-    def fit(self, X, d):
-        for _ in range(self.epochs):
-            for i in range(d.shape[0]):
-                x = np.insert(X[i], 0, 1)
-                y = self.predict(X[i])
-                e = d[i] - y
-                self.W = self.W + self.lr * e * x
-
-# Leer el archivo hojas.csv
-file_path = '/mnt/data/hojas.csv'
+file_path = './Practica/Datos/hojas.csv'
 df = pd.read_csv(file_path)
 
-# Extraer características y etiquetas
 X = df[['Perimetro', 'Area']].values
 y = df['Clase'].apply(lambda x: 1 if x == 'Helecho' else 0).values
 
-# Normalizar los datos
 scaler = StandardScaler()
 X_scaled = scaler.fit_transform(X)
 
-# Entrenar el Perceptrón
-perceptron = Perceptron(input_size=2, lr=0.01, epochs=300)
+perceptron = p.Perceptron(input_size=2, lr=0.01, epochs=300)
 perceptron.fit(X_scaled, y)
 
-# Mostrar los pesos del Perceptrón entrenado
 print("Pesos del Perceptrón:", perceptron.W)
-
 ```
-</details>
-
-
-#### Importar bibliotecas
 
 <table><td>
 
-Entrenamiento
-
-```python
-def fit(self, X, d):
-  for _ in range(self.epochs):
-    for i in range(d.shape[0]):
-      x = np.insert(X[i], 0, 1)
-      y = self.predict(X[i])
-      e = d[i] - y
-      self.W = self.W + self.lr * e * x
-```
+<img src='https://github.com/Fabian-Martinez-Rincon/Fabian-Martinez-Rincon/assets/55964635/8df959a9-d4bb-4e5c-b780-a15beacd855f' width='500px'>
 
 </td><td>
 
-![image](https://github.com/Fabian-Martinez-Rincon/Fabian-Martinez-Rincon/assets/55964635/8df959a9-d4bb-4e5c-b780-a15beacd855f)
+[Codigo del perceptron](https://github.com/Fabian-Martinez-Rincon/Deep-Learning/blob/main/Practica/02%20-%20Perceptr%C3%B3n/Codigos/perceptron.py)
 
 </td></table>
 
-- **Predic** Método para realizar una predicción. Calcula el producto punto de los pesos y las características y luego aplica la función de activación.
+
+
+
 
 
 
@@ -734,8 +689,6 @@ def fit(self, X, d):
 
 #### Parte b)
 A partir de los pesos del perceptrón entrenado, indique cuál es la función discriminante obtenida.
-
-Lamento las dificultades con la visualización. Aquí está la función discriminante corregida con formato matemático.
 
 La función discriminante del perceptrón es:
 
@@ -750,8 +703,6 @@ f(\mathbf{x}) = 0 + 0.0219 \times \text{{Perimetro\_normalizado}} - 0.0222 \time
 \]
 
 Si \( f(\mathbf{x}) \geq 0 \), la clase predicha será "Helecho"; de lo contrario, será "Hoja".
-
-Espero que ahora se vea correctamente. ¿Hay algo más en lo que pueda ayudarte?
 
 <img src= 'https://github.com/Fabian-Martinez-Rincon/Fabian-Martinez-Rincon/assets/55964635/7eebf649-e558-43e2-ad5f-9977dc5ff3e5' height="10" width="100%">
 

@@ -822,71 +822,28 @@ DF<span class="token punctuation">.</span>to_json<span class="token punctuation"
 <h4 class="mume-header" id="parte-a">Parte a)</h4>
 
 <p>Utilice los ejemplos del archivo hojas.csv para entrenar un perceptr&#xF3;n que permita reconocer cuando se trata de una hoja de helecho. Utilice una velocidad de aprendizaje (par&#xE1;metro alfa) de 0.01 y una m&#xE1;xima cantidad de iteraciones MAX_ITE=300.</p>
-<details><summary>Codigo completo</summary>
-<pre data-role="codeBlock" data-info="python" class="language-python"><span class="token keyword keyword-import">import</span> numpy <span class="token keyword keyword-as">as</span> np
-<span class="token keyword keyword-import">import</span> pandas <span class="token keyword keyword-as">as</span> pd
+<pre data-role="codeBlock" data-info="python" class="language-python"><span class="token keyword keyword-import">import</span> pandas <span class="token keyword keyword-as">as</span> pd
 <span class="token keyword keyword-from">from</span> sklearn<span class="token punctuation">.</span>preprocessing <span class="token keyword keyword-import">import</span> StandardScaler
+<span class="token keyword keyword-import">import</span> perceptron <span class="token keyword keyword-as">as</span> p
 
-<span class="token comment"># Definir la clase Perceptr&#xF3;n</span>
-<span class="token keyword keyword-class">class</span> <span class="token class-name">Perceptron</span><span class="token punctuation">:</span>
-    <span class="token keyword keyword-def">def</span> <span class="token function">__init__</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> input_size<span class="token punctuation">,</span> lr<span class="token operator">=</span><span class="token number">1</span><span class="token punctuation">,</span> epochs<span class="token operator">=</span><span class="token number">100</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
-        self<span class="token punctuation">.</span>W <span class="token operator">=</span> np<span class="token punctuation">.</span>zeros<span class="token punctuation">(</span>input_size <span class="token operator">+</span> <span class="token number">1</span><span class="token punctuation">)</span>
-        self<span class="token punctuation">.</span>epochs <span class="token operator">=</span> epochs
-        self<span class="token punctuation">.</span>lr <span class="token operator">=</span> lr
-    
-    <span class="token keyword keyword-def">def</span> <span class="token function">activation_fn</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> x<span class="token punctuation">)</span><span class="token punctuation">:</span>
-        <span class="token keyword keyword-return">return</span> <span class="token number">1</span> <span class="token keyword keyword-if">if</span> x <span class="token operator">&gt;=</span> <span class="token number">0</span> <span class="token keyword keyword-else">else</span> <span class="token number">0</span>
-
-    <span class="token keyword keyword-def">def</span> <span class="token function">predict</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> x<span class="token punctuation">)</span><span class="token punctuation">:</span>
-        x <span class="token operator">=</span> np<span class="token punctuation">.</span>insert<span class="token punctuation">(</span>x<span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">)</span>
-        z <span class="token operator">=</span> self<span class="token punctuation">.</span>W<span class="token punctuation">.</span>T<span class="token punctuation">.</span>dot<span class="token punctuation">(</span>x<span class="token punctuation">)</span>
-        <span class="token keyword keyword-return">return</span> self<span class="token punctuation">.</span>activation_fn<span class="token punctuation">(</span>z<span class="token punctuation">)</span>
-
-    <span class="token keyword keyword-def">def</span> <span class="token function">fit</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> X<span class="token punctuation">,</span> d<span class="token punctuation">)</span><span class="token punctuation">:</span>
-        <span class="token keyword keyword-for">for</span> _ <span class="token keyword keyword-in">in</span> <span class="token builtin">range</span><span class="token punctuation">(</span>self<span class="token punctuation">.</span>epochs<span class="token punctuation">)</span><span class="token punctuation">:</span>
-            <span class="token keyword keyword-for">for</span> i <span class="token keyword keyword-in">in</span> <span class="token builtin">range</span><span class="token punctuation">(</span>d<span class="token punctuation">.</span>shape<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
-                x <span class="token operator">=</span> np<span class="token punctuation">.</span>insert<span class="token punctuation">(</span>X<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">)</span>
-                y <span class="token operator">=</span> self<span class="token punctuation">.</span>predict<span class="token punctuation">(</span>X<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">)</span>
-                e <span class="token operator">=</span> d<span class="token punctuation">[</span>i<span class="token punctuation">]</span> <span class="token operator">-</span> y
-                self<span class="token punctuation">.</span>W <span class="token operator">=</span> self<span class="token punctuation">.</span>W <span class="token operator">+</span> self<span class="token punctuation">.</span>lr <span class="token operator">*</span> e <span class="token operator">*</span> x
-
-<span class="token comment"># Leer el archivo hojas.csv</span>
-file_path <span class="token operator">=</span> <span class="token string">&apos;/mnt/data/hojas.csv&apos;</span>
+file_path <span class="token operator">=</span> <span class="token string">&apos;./Practica/Datos/hojas.csv&apos;</span>
 df <span class="token operator">=</span> pd<span class="token punctuation">.</span>read_csv<span class="token punctuation">(</span>file_path<span class="token punctuation">)</span>
 
-<span class="token comment"># Extraer caracter&#xED;sticas y etiquetas</span>
 X <span class="token operator">=</span> df<span class="token punctuation">[</span><span class="token punctuation">[</span><span class="token string">&apos;Perimetro&apos;</span><span class="token punctuation">,</span> <span class="token string">&apos;Area&apos;</span><span class="token punctuation">]</span><span class="token punctuation">]</span><span class="token punctuation">.</span>values
 y <span class="token operator">=</span> df<span class="token punctuation">[</span><span class="token string">&apos;Clase&apos;</span><span class="token punctuation">]</span><span class="token punctuation">.</span><span class="token builtin">apply</span><span class="token punctuation">(</span><span class="token keyword keyword-lambda">lambda</span> x<span class="token punctuation">:</span> <span class="token number">1</span> <span class="token keyword keyword-if">if</span> x <span class="token operator">==</span> <span class="token string">&apos;Helecho&apos;</span> <span class="token keyword keyword-else">else</span> <span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">.</span>values
 
-<span class="token comment"># Normalizar los datos</span>
 scaler <span class="token operator">=</span> StandardScaler<span class="token punctuation">(</span><span class="token punctuation">)</span>
 X_scaled <span class="token operator">=</span> scaler<span class="token punctuation">.</span>fit_transform<span class="token punctuation">(</span>X<span class="token punctuation">)</span>
 
-<span class="token comment"># Entrenar el Perceptr&#xF3;n</span>
-perceptron <span class="token operator">=</span> Perceptron<span class="token punctuation">(</span>input_size<span class="token operator">=</span><span class="token number">2</span><span class="token punctuation">,</span> lr<span class="token operator">=</span><span class="token number">0.01</span><span class="token punctuation">,</span> epochs<span class="token operator">=</span><span class="token number">300</span><span class="token punctuation">)</span>
+perceptron <span class="token operator">=</span> p<span class="token punctuation">.</span>Perceptron<span class="token punctuation">(</span>input_size<span class="token operator">=</span><span class="token number">2</span><span class="token punctuation">,</span> lr<span class="token operator">=</span><span class="token number">0.01</span><span class="token punctuation">,</span> epochs<span class="token operator">=</span><span class="token number">300</span><span class="token punctuation">)</span>
 perceptron<span class="token punctuation">.</span>fit<span class="token punctuation">(</span>X_scaled<span class="token punctuation">,</span> y<span class="token punctuation">)</span>
 
-<span class="token comment"># Mostrar los pesos del Perceptr&#xF3;n entrenado</span>
 <span class="token keyword keyword-print">print</span><span class="token punctuation">(</span><span class="token string">&quot;Pesos del Perceptr&#xF3;n:&quot;</span><span class="token punctuation">,</span> perceptron<span class="token punctuation">.</span>W<span class="token punctuation">)</span>
-
-</pre></details>
-<h4 class="mume-header" id="importar-bibliotecas">Importar bibliotecas</h4>
-
-<table><tbody><tr><td>
-<p>Entrenamiento</p>
-<pre data-role="codeBlock" data-info="python" class="language-python"><span class="token keyword keyword-def">def</span> <span class="token function">fit</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> X<span class="token punctuation">,</span> d<span class="token punctuation">)</span><span class="token punctuation">:</span>
-  <span class="token keyword keyword-for">for</span> _ <span class="token keyword keyword-in">in</span> <span class="token builtin">range</span><span class="token punctuation">(</span>self<span class="token punctuation">.</span>epochs<span class="token punctuation">)</span><span class="token punctuation">:</span>
-    <span class="token keyword keyword-for">for</span> i <span class="token keyword keyword-in">in</span> <span class="token builtin">range</span><span class="token punctuation">(</span>d<span class="token punctuation">.</span>shape<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
-      x <span class="token operator">=</span> np<span class="token punctuation">.</span>insert<span class="token punctuation">(</span>X<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">)</span>
-      y <span class="token operator">=</span> self<span class="token punctuation">.</span>predict<span class="token punctuation">(</span>X<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">)</span>
-      e <span class="token operator">=</span> d<span class="token punctuation">[</span>i<span class="token punctuation">]</span> <span class="token operator">-</span> y
-      self<span class="token punctuation">.</span>W <span class="token operator">=</span> self<span class="token punctuation">.</span>W <span class="token operator">+</span> self<span class="token punctuation">.</span>lr <span class="token operator">*</span> e <span class="token operator">*</span> x
-</pre></td><td>
+</pre><table><tbody><tr><td>
 <p><img src="https://github.com/Fabian-Martinez-Rincon/Fabian-Martinez-Rincon/assets/55964635/8df959a9-d4bb-4e5c-b780-a15beacd855f" alt="image"></p>
+</td><td>
+<p><strong>Predic</strong> M&#xE9;todo para realizar una predicci&#xF3;n. Calcula el producto punto de los pesos y las caracter&#xED;sticas y luego aplica la funci&#xF3;n de activaci&#xF3;n.</p>
 </td></tr></tbody></table>
-<ul>
-<li><strong>Predic</strong> M&#xE9;todo para realizar una predicci&#xF3;n. Calcula el producto punto de los pesos y las caracter&#xED;sticas y luego aplica la funci&#xF3;n de activaci&#xF3;n.</li>
-</ul>
 <img src="https://github.com/Fabian-Martinez-Rincon/Fabian-Martinez-Rincon/assets/55964635/7eebf649-e558-43e2-ad5f-9977dc5ff3e5" height="10" width="100%">
 <h4 class="mume-header" id="parte-b">Parte b)</h4>
 
