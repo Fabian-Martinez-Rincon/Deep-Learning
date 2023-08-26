@@ -369,6 +369,22 @@ print(vector) # [ 0  1  2  3  4 -1 -1 -1  8  9]
 ```
 
 **Matrices (Arrays Bidimensionales)**:
+
+```python
+# Matrices (Arrays Bidimensionales)
+matriz = np.array([[1, 2, 3], [4, 5, 6], [7, 8, 9], [10, 11, 12]])
+
+print(matriz[1, 2]) # 6
+print(matriz[1, :]) # [4 5 6]
+print(matriz[:, 2]) # [ 3  6  9 12]
+
+print(matriz[1:3, 1:3]) # Acceso a submatrices
+
+matriz[2:4, 1:3] = 0 # Modificación de submatrices 
+```
+
+<details><summary>Explicación</summary>
+
 - El elemento en la segunda fila y tercera columna (índices 1 y 2) es `6`.
 - La segunda fila completa es `[4, 5, 6]`.
 - La tercera columna completa es `[3, 6, 9, 12]`.
@@ -392,18 +408,7 @@ print(vector) # [ 0  1  2  3  4 -1 -1 -1  8  9]
     \end{pmatrix}
     \]
 
-```python
-# Matrices (Arrays Bidimensionales)
-matriz = np.array([[1, 2, 3], [4, 5, 6], [7, 8, 9], [10, 11, 12]])
-
-print(matriz[1, 2]) # 6
-print(matriz[1, :]) # [4 5 6]
-print(matriz[:, 2]) # [ 3  6  9 12]
-
-print(matriz[1:3, 1:3]) # Acceso a submatrices
-
-matriz[2:4, 1:3] = 0 # Modificación de submatrices 
-```
+</details>
 
 **Tensores (Arrays Tridimensionales)**
 
@@ -415,6 +420,8 @@ tensor = np.array([
     [[13, 14], [15, 16], [17, 18]]
 ])
 ```
+
+<details><summary>Explicación</summary>
 
 **Acceder a elementos individuales**
 Vamos a acceder al elemento en la segunda matriz, segunda fila y primera columna (índices 1, 1 y 0).
@@ -477,6 +484,8 @@ Después de la modificación, el tensor se convierte en:
 [13, 14] & [15, 16] & [17, 18] \\
 \end{bmatrix}
 \]
+
+</details>
 
 <img src= 'https://github.com/Fabian-Martinez-Rincon/Fabian-Martinez-Rincon/assets/55964635/7eebf649-e558-43e2-ad5f-9977dc5ff3e5
 ' height="10" width="100%">
@@ -576,6 +585,8 @@ Realice las siguientes operaciones:
 
 # Practica 2 Perceptron
 
+- [Video sobre diagrama de cajas](https://www.youtube.com/watch?v=24Uz1mBksL4)
+
 >El objetivo principal de esta práctica es comprender el funcionamiento del perceptrón como bloque de construcción elemental de las redes neuronales. Adicionalmente se realiza un repaso sobre el análisis y preprocesamiento de los datos.
 
 ### Ejercicio 1
@@ -620,4 +631,169 @@ w(TEMPERATURA) = 2.386; w(DUREZA) = -2.196; b = -0.023
 
 ¿Cuál será la respuesta del perceptrón para un material sometido a una TEMPERATURA de 9 grados Celsius que presenta una DUREZA =BAJA?
 
-<img src= 'https://github.com/Fabian-Martinez-Rincon/Fabian-Martinez-Rincon/assets/559646357eebf649-e558-43e2-ad5f-9977dc5ff3e5' height="10" width="100%">
+<img src= 'https://github.com/Fabian-Martinez-Rincon/Fabian-Martinez-Rincon/assets/55964635/7eebf649-e558-43e2-ad5f-9977dc5ff3e5' height="10" width="100%">
+
+
+## Ejercicio 2 
+Se  desea  construir  una  Red  Neuronal,  formada  por  un  único  Perceptrón,  para  clasificar  fotos  de  hojas diferenciando  las  que  corresponden  a  helechos  de  las  que  no.  A continuación,  se  muestran  algunas  de  las imágenes que se utilizarán en el entrenamiento
+
+![image](https://github.com/Fabian-Martinez-Rincon/Fabian-Martinez-Rincon/assets/55964635/e45a1f5d-4862-4b28-9ffc-86899e209ba0)
+
+Se analizaron las imágenes y se extrajeron características geométricas representativas. El archivo hojas.csv contiene la cantidad de pixeles correspondientes al perímetro y el área de cada hoja.
+
+#### Parte a)
+Utilice los ejemplos del archivo hojas.csv para entrenar un perceptrón que permita reconocer cuando se trata de una hoja de helecho. Utilice una velocidad de aprendizaje (parámetro alfa) de 0.01 y una máxima cantidad de iteraciones MAX_ITE=300.
+
+<details><summary>Codigo completo</summary>
+
+```python
+import numpy as np
+import pandas as pd
+from sklearn.preprocessing import StandardScaler
+
+# Definir la clase Perceptrón
+class Perceptron:
+    def __init__(self, input_size, lr=1, epochs=100):
+        self.W = np.zeros(input_size + 1)
+        self.epochs = epochs
+        self.lr = lr
+    
+    def activation_fn(self, x):
+        return 1 if x >= 0 else 0
+
+    def predict(self, x):
+        x = np.insert(x, 0, 1)
+        z = self.W.T.dot(x)
+        return self.activation_fn(z)
+
+    def fit(self, X, d):
+        for _ in range(self.epochs):
+            for i in range(d.shape[0]):
+                x = np.insert(X[i], 0, 1)
+                y = self.predict(X[i])
+                e = d[i] - y
+                self.W = self.W + self.lr * e * x
+
+# Leer el archivo hojas.csv
+file_path = '/mnt/data/hojas.csv'
+df = pd.read_csv(file_path)
+
+# Extraer características y etiquetas
+X = df[['Perimetro', 'Area']].values
+y = df['Clase'].apply(lambda x: 1 if x == 'Helecho' else 0).values
+
+# Normalizar los datos
+scaler = StandardScaler()
+X_scaled = scaler.fit_transform(X)
+
+# Entrenar el Perceptrón
+perceptron = Perceptron(input_size=2, lr=0.01, epochs=300)
+perceptron.fit(X_scaled, y)
+
+# Mostrar los pesos del Perceptrón entrenado
+print("Pesos del Perceptrón:", perceptron.W)
+
+```
+</details>
+
+Claro, aquí tienes una explicación detallada de cada parte del código:
+
+#### Importar bibliotecas
+
+```python
+import numpy as np
+import pandas as pd
+from sklearn.preprocessing import StandardScaler
+```
+
+- `numpy`: Para operaciones matemáticas y manejo de arreglos.
+- `pandas`: Para la manipulación de datos y la lectura del archivo CSV.
+- `StandardScaler`: Para normalizar las características.
+
+#### Definición de la clase Perceptrón
+
+```python
+class Perceptron:
+    def __init__(self, input_size, lr=1, epochs=100):
+        self.W = np.zeros(input_size + 1)
+        self.epochs = epochs
+        self.lr = lr
+```
+
+- Se define una clase llamada `Perceptron` con un constructor (`__init__`) que inicializa los pesos (`self.W`), la tasa de aprendizaje (`self.lr`), y el número de épocas (`self.epochs`).
+
+```python
+    def activation_fn(self, x):
+        return 1 if x >= 0 else 0
+```
+
+- Función de activación de escalón unitario.
+
+```python
+    def predict(self, x):
+        x = np.insert(x, 0, 1)
+        z = self.W.T.dot(x)
+        return self.activation_fn(z)
+```
+
+- Método para realizar una predicción. Calcula el producto punto de los pesos y las características y luego aplica la función de activación.
+
+```python
+    def fit(self, X, d):
+        for _ in range(self.epochs):
+            for i in range(d.shape[0]):
+                x = np.insert(X[i], 0, 1)
+                y = self.predict(X[i])
+                e = d[i] - y
+                self.W = self.W + self.lr * e * x
+```
+
+- Método para entrenar el perceptrón. Actualiza los pesos según la regla de aprendizaje del perceptrón.
+
+#### Lectura del archivo y preparación de datos
+
+```python
+file_path = '/mnt/data/hojas.csv'
+df = pd.read_csv(file_path)
+```
+
+- Lee el archivo `hojas.csv` y lo almacena en un DataFrame de pandas.
+
+```python
+X = df[['Perimetro', 'Area']].values
+y = df['Clase'].apply(lambda x: 1 if x == 'Helecho' else 0).values
+```
+
+- Extrae las características (`X`) y las etiquetas (`y`) del DataFrame.
+
+```python
+scaler = StandardScaler()
+X_scaled = scaler.fit_transform(X)
+```
+
+- Normaliza las características utilizando `StandardScaler`.
+
+### Entrenamiento del Perceptrón
+
+```python
+perceptron = Perceptron(input_size=2, lr=0.01, epochs=300)
+perceptron.fit(X_scaled, y)
+```
+
+- Crea una instancia de la clase `Perceptron` y la entrena con los datos normalizados.
+
+```python
+print("Pesos del Perceptrón:", perceptron.W)
+```
+
+- Imprime los pesos del perceptrón entrenado.
+
+Espero que esto aclare cualquier duda sobre el código. ¿Hay algo más en lo que pueda ayudarte?
+
+![image](https://github.com/Fabian-Martinez-Rincon/Fabian-Martinez-Rincon/assets/55964635/8df959a9-d4bb-4e5c-b780-a15beacd855f)
+
+#### Parte b)
+A partir de los pesos del perceptrón entrenado, indique cuál es la función discriminante obtenida.
+
+<img src= 'https://github.com/Fabian-Martinez-Rincon/Fabian-Martinez-Rincon/assets/55964635/7eebf649-e558-43e2-ad5f-9977dc5ff3e5' height="10" width="100%">
+
