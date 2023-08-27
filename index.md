@@ -650,36 +650,68 @@ Utilice los ejemplos del archivo hojas.csv para entrenar un perceptrón que perm
 [Codigo del perceptron](/02%20-%20Perceptrón/perceptron.py)
 
 ```python
+import os
 import pandas as pd
 from sklearn.preprocessing import StandardScaler
-import perceptron as p
-import os
+import perceptron as p  # Asegúrate de que este módulo esté en el mismo directorio o en tu PYTHONPATH
 
-PATH_BASE = os.path.dirname(os.path.dirname(__file__))
-PATH_SOURCE = os.path.join(PATH_BASE, "Datos")
+def load_and_preprocess_data(file_path):
+    """
+    Carga y preprocesa los datos desde un archivo CSV.
 
-# Archivo de datos
-FILE_NAME = 'hojas.csv'
-FILE_PATH = os.path.join(PATH_SOURCE, FILE_NAME)
+    Parámetros:
+    - file_path: Ruta al archivo CSV.
 
-try:
-    with open(FILE_PATH, mode='r', encoding="UTF-8") as file:
+    Retorna:
+    - X_scaled: Características escaladas.
+    - y: Etiquetas.
+    """
+    with open(file_path, mode='r', encoding="UTF-8") as file:
         df = pd.read_csv(file)
     X = df[['Perimetro', 'Area']].values
     y = df['Clase'].apply(lambda x: 1 if x == 'Helecho' else 0).values
-    
     scaler = StandardScaler()
     X_scaled = scaler.fit_transform(X)
-    
+    return X_scaled, y
+
+def train_perceptron(X, y):
+    """
+    Entrena un Perceptrón y lo devuelve.
+
+    Parámetros:
+    - X: Características.
+    - y: Etiquetas.
+
+    Retorna:
+    - Un objeto Perceptrón entrenado.
+    """
     perceptron = p.Perceptron(input_size=2, lr=0.01, epochs=300)
-    perceptron.fit(X_scaled, y)
-    
-    print(perceptron.__str__())
-    
-except FileNotFoundError:
-    print('No existe el archivo', FILE_PATH)
-except NotADirectoryError:
-    print('La ruta no es un directorio ', PATH_SOURCE)
+    perceptron.fit(X, y)
+    return perceptron
+
+def main():
+    """Función principal."""
+    # Configurar rutas de archivos
+    PATH_BASE = os.path.dirname(os.path.dirname(__file__))
+    PATH_SOURCE = os.path.join(PATH_BASE, "Datos")
+    FILE_NAME = 'hojas.csv'
+    FILE_PATH = os.path.join(PATH_SOURCE, FILE_NAME)
+
+    try:
+        X_scaled, y = load_and_preprocess_data(FILE_PATH)
+    except FileNotFoundError:
+        print(f'No existe el archivo {FILE_PATH}')
+        return
+    except NotADirectoryError:
+        print(f'La ruta no es un directorio {PATH_SOURCE}')
+        return
+    else:
+        trained_perceptron = train_perceptron(X_scaled, y)
+        print(trained_perceptron.__str__())
+
+if __name__ == "__main__":
+    main()
+
 ```
 
 <div align='center'><img src='https://github.com/Fabian-Martinez-Rincon/Fabian-Martinez-Rincon/assets/55964635/8df959a9-d4bb-4e5c-b780-a15beacd855f' width='500px'></div>
@@ -705,3 +737,167 @@ Si \( f(\mathbf{x}) \geq 0 \), la clase predicha será "Helecho"; de lo contrari
 
 <img src= 'https://github.com/Fabian-Martinez-Rincon/Fabian-Martinez-Rincon/assets/55964635/7eebf649-e558-43e2-ad5f-9977dc5ff3e5' height="10" width="100%">
 
+#### Parte c) 
+Calcule manualmente la respuesta del perceptrón si se ingresa una hoja con un perímetro de 770 pixeles 
+y un área de 5000 pixeles. 
+
+Para calcular manualmente la respuesta del perceptrón para una nueva entrada, necesitamos realizar los siguientes pasos:
+
+1. **Normalizar la nueva entrada**: Utilizamos la media y la desviación estándar calculadas durante el entrenamiento para normalizar la nueva entrada.
+
+\[
+\text{Normalizado}(x_i) = \frac{x_i - \text{media}}{\text{desviación estándar}}
+\]
+
+2. **Agregar el término de sesgo**: Una vez que tenemos las características normalizadas, agregamos el término de sesgo (un "1" al principio del vector).
+
+3. **Calcular la suma ponderada \( z \)**: Utilizamos los pesos finales \( W \) obtenidos después del entrenamiento para calcular la suma ponderada.
+
+\[
+z = W_0 + W_1 \times x_1 + W_2 \times x_2
+\]
+
+4. **Aplicar la función de activación**: Finalmente, aplicamos la función de activación para obtener la salida \( y \).
+
+\[
+y = 
+\begin{cases} 
+1 & \text{si } z \geq 0 \\
+0 & \text{si } z < 0
+\end{cases}
+\]
+
+
+```python
+# main.py
+
+import os
+import pandas as pd
+import numpy as np
+from sklearn.preprocessing import StandardScaler
+import perceptron as p
+
+def load_and_preprocess_data(file_path):
+    """Carga y preprocesa los datos desde un archivo CSV."""
+    try:
+        with open(file_path, mode='r', encoding="UTF-8") as file:
+            df = pd.read_csv(file)
+    except FileNotFoundError as e:
+        raise Exception(f"El archivo {file_path} no se encuentra.") from e
+    except Exception as e:
+        raise Exception("Error desconocido al abrir el archivo.") from e
+
+    X = df[['Perimetro', 'Area']].values
+    y = df['Clase'].apply(lambda x: 1 if x == 'Helecho' else 0).values
+    scaler = StandardScaler()
+    X_scaled = scaler.fit_transform(X)
+    return X_scaled, y, scaler
+
+def predict_new_leaf(perceptron, scaler, perimetro, area):
+    entrada_nueva = np.array([[perimetro, area]])
+    entrada_nueva_norm = scaler.transform(entrada_nueva)
+    entrada_nueva_norm = np.insert(entrada_nueva_norm, 0, 1)
+    z_nuevo = np.dot(perceptron.W, entrada_nueva_norm)
+    y_nuevo = 1 if z_nuevo >= 0 else 0
+    return z_nuevo, y_nuevo
+
+def main():
+    """Función principal."""
+    # Define constantes para las rutas de archivos
+    PATH_BASE = os.path.dirname(os.path.dirname(__file__))
+    PATH_SOURCE = os.path.join(PATH_BASE, "Datos")
+    FILE_NAME = 'hojas.csv'
+    FILE_PATH = os.path.join(PATH_SOURCE, FILE_NAME)
+
+    try:
+        X_scaled, y, scaler = load_and_preprocess_data(FILE_PATH)
+        perceptron = p.Perceptron(input_size=2, lr=0.01, epochs=300)
+        perceptron.fit(X_scaled, y)
+        print(perceptron)
+
+        perimetro_nuevo = 770
+        area_nueva = 5000
+        z_nuevo, y_nuevo = predict_new_leaf(perceptron, scaler, perimetro_nuevo, area_nueva)
+        
+        print(f"La suma ponderada (z) es: {z_nuevo}")
+        print(f"La salida del perceptrón (y) es: {y_nuevo}")
+
+    except Exception as e:
+        print(str(e))
+
+if __name__ == "__main__":
+    main()
+```
+
+
+Este código calculará la suma ponderada \( z \) y la salida \( y \) del perceptrón para una hoja con un perímetro de 770 píxeles y un área de 5000 píxeles.
+
+<img src= 'https://github.com/Fabian-Martinez-Rincon/Fabian-Martinez-Rincon/assets/55964635/7eebf649-e558-43e2-ad5f-9977dc5ff3e5' height="10" width="100%">
+
+#### Parte d)
+
+Realice  50  ejecuciones  independientes  del  entrenamiento  de  a)  utilizando  una  máxima  cantidad  de iteraciones  MAX_ITE=100.  Luego  complete el  siguiente  cuadro  considerando  sólo los  casos  exitosos en los que se logró obtener un perceptrón capaz de clasificar correctamente todos los ejemplos. Registre el porcentaje de ejecuciones con un accuracy del 100% y la cantidad de iteraciones promedio empleadas en estas ejecuciones exitosas
+
+![image](https://github.com/Fabian-Martinez-Rincon/Fabian-Martinez-Rincon/assets/55964635/9b5c2a65-8da3-42d6-b5e1-cae00eeb2e86)
+
+```python
+import os
+import pandas as pd
+from sklearn.preprocessing import StandardScaler
+from sklearn.metrics import accuracy_score
+import perceptron as p
+
+def load_data(file_path):
+    """Carga los datos desde un archivo CSV."""
+    with open(file_path, mode='r', encoding="UTF-8") as file:
+        df = pd.read_csv(file)
+    return df
+
+def preprocess_data(df):
+    """Preprocesa los datos y devuelve características y etiquetas."""
+    X = df[['Perimetro', 'Area']].values
+    y = df['Clase'].apply(lambda x: 1 if x == 'Helecho' else 0).values
+    scaler = StandardScaler()
+    X_scaled = scaler.fit_transform(X)
+    return X_scaled, y
+
+def run_multiple_trainings(X, y, num_executions=50, max_iterations=100):
+    """Ejecuta múltiples entrenamientos y devuelve estadísticas."""
+    successful_executions = 0
+    total_iterations = 0
+    
+    for _ in range(num_executions):
+        perceptron = p.Perceptron(input_size=2, lr=0.01, epochs=max_iterations)
+        perceptron.fit(X, y)
+        
+        y_pred = [perceptron.predict(x) for x in X]
+        if accuracy_score(y, y_pred) == 1.0:
+            successful_executions += 1
+            total_iterations += max_iterations
+
+    percentage_successful = (successful_executions / num_executions) * 100
+    average_iterations = total_iterations / successful_executions if successful_executions > 0 else 0
+    
+    return percentage_successful, average_iterations
+
+if __name__ == "__main__":
+    PATH_BASE = os.path.dirname(os.path.dirname(__file__))
+    PATH_SOURCE = os.path.join(PATH_BASE, "Datos")
+    FILE_NAME = 'hojas.csv'
+    FILE_PATH = os.path.join(PATH_SOURCE, FILE_NAME)
+    
+    try:
+        df = load_data(FILE_PATH)
+        X_scaled, y = preprocess_data(df)
+        percentage_successful, average_iterations = run_multiple_trainings(X_scaled, y)
+        
+        print(f"Porcentaje de ejecuciones exitosas: {percentage_successful}")
+        print(f"Promedio de iteraciones en ejecuciones exitosas: {average_iterations}")
+
+    except FileNotFoundError:
+        print(f'No existe el archivo {FILE_PATH}')
+    except NotADirectoryError:
+        print(f'La ruta no es un directorio {PATH_SOURCE}')
+```
+
+<img src= 'https://github.com/Fabian-Martinez-Rincon/Fabian-Martinez-Rincon/assets/55964635/7eebf649-e558-43e2-ad5f-9977dc5ff3e5' height="10" width="100%">
