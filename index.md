@@ -647,45 +647,44 @@ Se analizaron las imágenes y se extrajeron características geométricas repres
 
 Utilice los ejemplos del archivo hojas.csv para entrenar un perceptrón que permita reconocer cuando se trata de una hoja de helecho. Utilice una velocidad de aprendizaje (parámetro alfa) de 0.01 y una máxima cantidad de iteraciones MAX_ITE=300.
 
+[Codigo del perceptron](/02%20-%20Perceptrón/perceptron.py)
+
 ```python
 import pandas as pd
 from sklearn.preprocessing import StandardScaler
 import perceptron as p
+import os
 
-file_path = './Practica/Datos/hojas.csv'
-df = pd.read_csv(file_path)
+PATH_BASE = os.path.dirname(os.path.dirname(__file__))
+PATH_SOURCE = os.path.join(PATH_BASE, "Datos")
 
-X = df[['Perimetro', 'Area']].values
-y = df['Clase'].apply(lambda x: 1 if x == 'Helecho' else 0).values
+# Archivo de datos
+FILE_NAME = 'hojas.csv'
+FILE_PATH = os.path.join(PATH_SOURCE, FILE_NAME)
 
-scaler = StandardScaler()
-X_scaled = scaler.fit_transform(X)
-
-perceptron = p.Perceptron(input_size=2, lr=0.01, epochs=300)
-perceptron.fit(X_scaled, y)
-
-print("Pesos del Perceptrón:", perceptron.W)
+try:
+    with open(FILE_PATH, mode='r', encoding="UTF-8") as file:
+        df = pd.read_csv(file)
+    X = df[['Perimetro', 'Area']].values
+    y = df['Clase'].apply(lambda x: 1 if x == 'Helecho' else 0).values
+    
+    scaler = StandardScaler()
+    X_scaled = scaler.fit_transform(X)
+    
+    perceptron = p.Perceptron(input_size=2, lr=0.01, epochs=300)
+    perceptron.fit(X_scaled, y)
+    
+    print(perceptron.__str__())
+    
+except FileNotFoundError:
+    print('No existe el archivo', FILE_PATH)
+except NotADirectoryError:
+    print('La ruta no es un directorio ', PATH_SOURCE)
 ```
 
-<table><td>
-
-<img src='https://github.com/Fabian-Martinez-Rincon/Fabian-Martinez-Rincon/assets/55964635/8df959a9-d4bb-4e5c-b780-a15beacd855f' width='500px'>
-
-</td><td>
-
-[Codigo del perceptron](https://github.com/Fabian-Martinez-Rincon/Deep-Learning/blob/main/Practica/02%20-%20Perceptr%C3%B3n/Codigos/perceptron.py)
-
-</td></table>
-
-
-
-
-
-
+<div align='center'><img src='https://github.com/Fabian-Martinez-Rincon/Fabian-Martinez-Rincon/assets/55964635/8df959a9-d4bb-4e5c-b780-a15beacd855f' width='500px'></div>
 
 <img src= 'https://github.com/Fabian-Martinez-Rincon/Fabian-Martinez-Rincon/assets/55964635/7eebf649-e558-43e2-ad5f-9977dc5ff3e5' height="10" width="100%">
-
-
 
 #### Parte b)
 A partir de los pesos del perceptrón entrenado, indique cuál es la función discriminante obtenida.

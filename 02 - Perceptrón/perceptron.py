@@ -56,3 +56,5 @@ class Perceptron:
                 y = self.predict(X[i])
                 e = d[i] - y
                 self.W = self.W + self.lr * e * x
+    def __str__(self):
+        return f"Perceptrón con los siguientes atributos:\n- Pesos: {self.W}\n- Tasa de aprendizaje: {self.lr}\n- Épocas: {self.epochs}"
